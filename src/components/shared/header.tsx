@@ -7,11 +7,10 @@ import Auth from './auth'
 import Search from './search'
 import BottomHeader from './bottomHeader'
 
-
 const Header = () => {
   return (
     <>
-      <header className='w-full flex items-center justify-between gap-5 px-3 md:px-5 lg:px-20 xl:px-32 2xl:px-56'>
+      <header className='w-full flex items-center justify-between gap-5 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
         <Link href='/' className='min-w-[100px]'>
           <Image
             src='/logo.jpg'
