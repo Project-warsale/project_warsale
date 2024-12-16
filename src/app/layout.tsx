@@ -3,6 +3,7 @@ import { Recursive } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/shared/header'
 import Footer from '@/components/shared/footer'
+import ContextProvider from '@/context/contextProvider'
 
 const recursive = Recursive({ subsets: ['latin'] })
 
@@ -20,7 +21,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${recursive.className} antialiased overflow-x-hidden`}>
         <Header />
-        {children}
+        <ContextProvider>{children}</ContextProvider>
         <Footer />
       </body>
     </html>

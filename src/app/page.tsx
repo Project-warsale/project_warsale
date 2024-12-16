@@ -13,10 +13,11 @@ const Home = async () => {
       <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full px-5 mt-5 gap-6'>
         {products.map((product) => (
           <ProductCard
+            key={product.id}
+            id={product.id}
             title={product.title}
             image={product.images[0]}
             price={product.price}
-            key={product.id}
           />
         ))}
       </div>
