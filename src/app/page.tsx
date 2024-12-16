@@ -1,5 +1,10 @@
+import Footer from "../components/shared/footer";
 const Home = () => {
-  return <div>Home</div>
-}
+  return (
+    <div className="w-screen h-screen flex justify-start items-start">
+      <Footer />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
