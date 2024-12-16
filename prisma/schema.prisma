@@ -26,11 +26,10 @@ model Product {
 }
 
 model Specifications {
-  id             String    @id @default(cuid())
-  size           String?
-  weight         String?
-  keyword        String?
-  color          String?
-  experationDate String?
-  Product        Product[]
+  id      String    @id @default(cuid())
+  size    String?
+  weight  String?
+  model   String?
+  color   String?
+  Product Product[]
 }

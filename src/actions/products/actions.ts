@@ -12,6 +12,9 @@ export const getProductById = async (id: string) => {
     where: {
       id: id,
     },
+    include: {
+      specifications: true,
+    },
   })
 
   return product
