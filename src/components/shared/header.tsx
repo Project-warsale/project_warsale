@@ -7,6 +7,7 @@ import Auth from './auth'
 import Search from './search'
 import BottomHeader from './bottomHeader'
 
+
 const Header = () => {
   return (
     <>
