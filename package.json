@@ -12,6 +12,7 @@
     "@kinde-oss/kinde-auth-nextjs": "^2.4.6",
     "@prisma/client": "^6.0.1",
     "axios": "^1.7.9",
+    "joi": "^17.13.3",
     "next": "15.1.0",
     "prisma": "^6.0.1",
     "react": "^19.0.0",
