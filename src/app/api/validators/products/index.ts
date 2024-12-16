@@ -8,6 +8,7 @@ export const validateProductsArray = (products: any[]) => {
         product: {
           title: Joi.string().required().min(3),
           description: Joi.string().required().min(10),
+          images: Joi.array().items(Joi.string()).required(),
           brand: Joi.string().optional(),
           price: Joi.number().required(),
         },

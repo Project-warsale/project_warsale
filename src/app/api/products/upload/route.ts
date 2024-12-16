@@ -21,13 +21,14 @@ export const POST = async (req: Request) => {
     }
 
     products.forEach(async (product) => {
-      const { title, description, brand, price } = product.product
+      const { title, description, brand, price, images } = product.product
       await prisma.product.create({
         data: {
           title: title,
           description: description,
           brand: brand,
           price: price,
+          images: images,
           specifications: {
             create: {
               ...product.specifications,

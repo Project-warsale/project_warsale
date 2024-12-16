@@ -17,8 +17,10 @@ model Product {
   id               String          @id @default(cuid())
   title            String
   description      String
+  images           String[]
   brand            String          @default("unbranded")
   price            Int
+  discountedPrice  Int?
   specifications   Specifications? @relation(fields: [specificationsId], references: [id])
   specificationsId String?
 }
