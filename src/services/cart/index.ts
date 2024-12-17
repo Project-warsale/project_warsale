@@ -15,3 +15,8 @@ export const removeFromCart = async (id: number) => {
   const { data } = await axios.delete(`/api/cart?id=${id}`)
   return data
 }
+
+export const clearCart = async (cartId: number) => {
+  const { data } = await axios.delete(`/api/cart/clear?cartId=${cartId}`)
+  return data
+}

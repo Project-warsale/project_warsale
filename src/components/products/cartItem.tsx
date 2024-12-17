@@ -61,7 +61,7 @@ const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
   }
 
   return (
-    <div className='flex flex-col items-start gap-4 py-5 px-5 border-b w-full last:border-none relative'>
+    <div className='flex flex-col items-start gap-1 py-5 px-5 border-b w-full last:border-none relative'>
       <div className='w-full flex items-start gap-5'>
         <div className='h-[90px] w-[90px] relative'>
           <Image src={image} fill alt='product image' />

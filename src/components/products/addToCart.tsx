@@ -14,7 +14,7 @@ import { toast } from 'sonner'
 import { updateProductQty } from '@/services/cart'
 
 const AddToCart = ({ product }: { product: Product }) => {
-  const { cart, setCart } = useContext(AppContext)
+  const { cart, setCart, setCartOpen } = useContext(AppContext)
   const [loading, setLoading] = useState<boolean>(false)
   const [qty, setQty] = useState(1)
 
@@ -73,6 +73,7 @@ const AddToCart = ({ product }: { product: Product }) => {
           )
           updateCartClient(qty + targetCartItem.quantity)
           setLoading(false)
+          setCartOpen(true)
         }
         return
       }
@@ -84,6 +85,7 @@ const AddToCart = ({ product }: { product: Product }) => {
       quantity: qty,
     })
     setLoading(false)
+    setCartOpen(true)
 
     if (data.cartItem) {
       setCart((prev) => ({
@@ -129,9 +131,9 @@ const AddToCart = ({ product }: { product: Product }) => {
           </button>
         </div>
         <button
-          disabled={loading}
+          disabled={loading || !cart}
           onClick={() => addToCart(product.id)}
-          className='rounded-full px-5 py-1 bg-theme h-[42px] text-white flex items-center gap-2 hover:bg-theme/80 transition-all duration-200 ease-linear'
+          className='rounded-full px-5 py-1 bg-theme h-[42px] disabled:opacity-60 text-white flex items-center gap-2 hover:bg-theme/80 transition-all duration-200 ease-linear'
         >
           {!loading ? (
             <div className='flex items-center'>

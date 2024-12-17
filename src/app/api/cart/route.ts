@@ -98,7 +98,7 @@ export const POST = async (req: Request) => {
 export const PUT = async (req: Request) => {
   try {
     const body = await req.json()
-    console.log(body)
+
     const { getUser } = getKindeServerSession()
     const user = await getUser()
 
