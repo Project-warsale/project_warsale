@@ -94,7 +94,7 @@ const FooterBottom = () => (
         />
         <Image
           className='cmsb99-my-2'
-          src={'paypal-logo.svg'}
+          src={'/paypal-logo.svg'}
           alt='Paypal'
           width={90}
           height={22}

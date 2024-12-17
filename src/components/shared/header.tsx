@@ -2,10 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaArrowRight } from 'react-icons/fa6'
 import { LuHeadset } from 'react-icons/lu'
-import { FiShoppingCart } from 'react-icons/fi'
 import Auth from './auth'
 import Search from './search'
 import BottomHeader from './bottomHeader'
+import CartIcon from './cartIcon'
 
 const Header = () => {
   return (
@@ -29,7 +29,7 @@ const Header = () => {
             </div>
             <LuHeadset className='text-3xl text-[#0c2e4d]' />
           </Link>
-          <FiShoppingCart className='text-[22px] cursor-pointer' />
+          <CartIcon />
           <Auth />
         </div>
       </header>

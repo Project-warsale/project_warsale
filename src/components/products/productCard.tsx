@@ -1,16 +1,21 @@
 import { formatPrice } from '@/lib/utils'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FaCheckCircle } from 'react-icons/fa'
 
 interface ProductCardProps {
+  id: string
   title: string
   price: number
   image: string
 }
 
-const ProductCard = ({ title, price, image }: ProductCardProps) => {
+const ProductCard = ({ title, price, image, id }: ProductCardProps) => {
   return (
-    <div className='h-[280px] w-full p-5 flex flex-col items-start gap-1 py-4 rounded-[5px] hover:shadow-lg transition-all duration-200 ease-linear'>
+    <Link
+      href={`/products/${id}`}
+      className='h-[280px] w-full p-5 flex flex-col items-start gap-1 py-4 rounded-[5px] hover:shadow-lg transition-all duration-200 ease-linear'
+    >
       <div className='relative w-full h-full'>
         <Image
           src={image}
@@ -25,7 +30,7 @@ const ProductCard = ({ title, price, image }: ProductCardProps) => {
         <FaCheckCircle />
         Delivery time: 5-7 working days
       </span>
-    </div>
+    </Link>
   )
 }
 

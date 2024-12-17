@@ -23,14 +23,29 @@ model Product {
   discountedPrice  Int?
   specifications   Specifications? @relation(fields: [specificationsId], references: [id])
   specificationsId String?
+  cartItems        CartItems[]
 }
 
 model Specifications {
-  id             String    @id @default(cuid())
-  size           String?
-  weight         String?
-  keyword        String?
-  color          String?
-  experationDate String?
-  Product        Product[]
+  id      String    @id @default(cuid())
+  size    String?
+  weight  String?
+  model   String?
+  color   String?
+  Product Product[]
+}
+
+model Cart {
+  id        Int         @id @default(autoincrement())
+  userId    String      @unique
+  cartItems CartItems[]
+}
+
+model CartItems {
+  id        Int     @id @default(autoincrement())
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  cartId    Int
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+  quantity  Int
 }
