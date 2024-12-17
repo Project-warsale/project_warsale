@@ -12,7 +12,7 @@ const ServiceCard = ({ title, description, Icon, href }: ServiceCardProps) => {
   return (
     <Link
       href={href}
-      className='py-5 px-10 rounded-[5px] flex flex-col items-start gap-3 justify-center h-[180px] shadow-md hover:shadow-lg transition-all ease-linear w-full'
+      className='py-5 px-10 rounded-[5px] flex flex-col items-start gap-3 justify-center h-[200px] shadow-md hover:shadow-lg transition-all ease-linear w-full'
     >
       <Icon className='text-theme text-xl' />
       <h3 className='text-xl font-semibold'>{title}</h3>

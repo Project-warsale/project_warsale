@@ -1,17 +1,18 @@
-import Link from "next/link";
-import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa6";
-import { LuHeadset } from "react-icons/lu";
-import { FiShoppingCart } from "react-icons/fi";
-import Auth from "./auth";
-import Search from "./search";
-import BottomHeader from "./bottomHeader";
+import Link from 'next/link'
+import Image from 'next/image'
+import { FaArrowRight } from 'react-icons/fa6'
+import { LuHeadset } from 'react-icons/lu'
+import Auth from './auth'
+import Search from './search'
+import BottomHeader from './bottomHeader'
+import CartIcon from './cartIcon'
+
 
 const Header = () => {
   return (
     <>
-      <header className="w-full flex items-center justify-between gap-5 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80">
-        <Link href="/" className="min-w-[100px]">
+      <header className='w-full flex items-center justify-between gap-5 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
+        <Link href='/' className='min-w-[100px]'>
           <Image
             src="/logo.jpg"
             alt="logo"
@@ -29,7 +30,7 @@ const Header = () => {
             </div>
             <LuHeadset className="text-3xl text-[#0c2e4d]" />
           </Link>
-          <FiShoppingCart className="text-[22px] cursor-pointer" />
+          <CartIcon />
           <Auth />
         </div>
       </header>

@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Recursive } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/shared/header'
+import Footer from '@/components/shared/footer'
+import ContextProvider from '@/context/contextProvider'
+import { ToastContainer } from 'react-toastify'
 
 const recursive = Recursive({ subsets: ['latin'] })
 
@@ -17,9 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${recursive.className} antialiased`}>
-        <Header />
-        {children}
+      <body className={`${recursive.className} antialiased overflow-x-hidden`}>
+        <ContextProvider>
+          <Header />
+          {children}
+          <Footer />
+          <ToastContainer />
+        </ContextProvider>
       </body>
     </html>
   )
