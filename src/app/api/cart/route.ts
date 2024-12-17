@@ -94,3 +94,50 @@ export const POST = async (req: Request) => {
     )
   }
 }
+
+export const PUT = async (req: Request) => {
+  try {
+    const body = await req.json()
+    const { getUser } = getKindeServerSession()
+    const user = await getUser()
+
+    if (!user) {
+      return NextResponse.json(
+        { message: 'Unauthorized request' },
+        { status: 401 }
+      )
+    }
+
+    const { newQty, id } = body
+
+    if (newQty > 10 || newQty < 1) {
+      return NextResponse.json(
+        { message: 'Invalid qty provided' },
+        { status: 400 }
+      )
+    }
+
+    if (!newQty || !id) {
+      return NextResponse.json(
+        { message: 'ur missing newQty or id field' },
+        { status: 400 }
+      )
+    }
+
+    const cartItem = await prisma.cartItems.update({
+      where: {
+        id: id,
+      },
+      data: {
+        quantity: newQty,
+      },
+    })
+
+    return NextResponse.json({ cartItem }, { status: 201 })
+  } catch (err) {
+    return NextResponse.json(
+      { message: 'Error incrementing product', err: err },
+      { status: 500 }
+    )
+  }
+}
