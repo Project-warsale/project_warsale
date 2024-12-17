@@ -20,9 +20,12 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${recursive.className} antialiased overflow-x-hidden`}>
-        <Header />
-        <ContextProvider>{children}</ContextProvider>
-        <Footer />
+        <ContextProvider>
+          <Header />
+          {children}
+
+          <Footer />
+        </ContextProvider>
       </body>
     </html>
   )
