@@ -4,7 +4,7 @@ import './globals.css'
 import Header from '@/components/shared/header'
 import Footer from '@/components/shared/footer'
 import ContextProvider from '@/context/contextProvider'
-import { ToastContainer } from 'react-toastify'
+import { Toaster } from 'sonner'
 
 const recursive = Recursive({ subsets: ['latin'] })
 
@@ -25,7 +25,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
-          <ToastContainer />
+          <Toaster position='top-right' closeButton />
         </ContextProvider>
       </body>
     </html>

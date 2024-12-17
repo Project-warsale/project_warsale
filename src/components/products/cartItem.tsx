@@ -7,6 +7,8 @@ import { formatPrice } from '@/lib/utils'
 import { LuMinus, LuPlus } from 'react-icons/lu'
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '@/context/contextProvider'
+import { removeFromCart, updateProductQty } from '@/services/cart'
+import { toast } from 'sonner'
 
 interface CartItemProps {
   id: string
@@ -14,9 +16,10 @@ interface CartItemProps {
   qty: number
   image: string
   title: string
+  itemId: number
 }
 
-const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
+const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
   const { cart, setCart } = useContext(AppContext)
   const [quantity, setQuantity] = useState<number>(qty)
 
@@ -37,20 +40,28 @@ const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
     updateCartClient(quantity)
   }, [quantity])
 
+  useEffect(() => {
+    setQuantity(qty)
+  }, [qty])
+
   const incrementQty = () => {
     if (quantity >= 10) return
     setQuantity((prev) => {
+      updateProductQty(itemId, prev + 1)
       return prev + 1
     })
   }
 
   const decrementQty = () => {
     if (quantity <= 1) return
-    setQuantity((prev) => prev - 1)
+    setQuantity((prev) => {
+      updateProductQty(itemId, prev - 1)
+      return prev - 1
+    })
   }
 
   return (
-    <div className='flex flex-col items-start gap-4 py-5 px-5 border-b w-full last:border-none relative'>
+    <div className='flex flex-col items-start gap-1 py-5 px-5 border-b w-full last:border-none relative'>
       <div className='w-full flex items-start gap-5'>
         <div className='h-[90px] w-[90px] relative'>
           <Image src={image} fill alt='product image' />
@@ -60,7 +71,24 @@ const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
           <span className='text-sm text-gray-600'>{id}</span>
         </div>
       </div>
-      <button className='absolute right-3 top-2'>
+      <button
+        onClick={async () => {
+          const data = await removeFromCart(itemId)
+          if (!cart) return
+          setCart((prev) => ({
+            ...prev!,
+            cartItems: prev!.cartItems.filter((item) => {
+              return item.id !== itemId
+            }),
+          }))
+          if (data.deletedCartItem) {
+            toast.success(
+              `${data.deletedCartItem.product.title} has been removed from the cart.`
+            )
+          }
+        }}
+        className='absolute right-3 top-2'
+      >
         <IoIosClose className='text-[21px] text-gray-600' />
       </button>
       <div className='w-full flex items-center justify-between'>
@@ -80,9 +108,11 @@ const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
               if (Number(e.target.value) < 1) {
                 return
               } else if (Number(e.target.value) > 10) {
+                updateProductQty(itemId, 10)
                 return setQuantity(10)
               }
               setQuantity(Number(e.target.value))
+              updateProductQty(itemId, quantity)
             }}
             className='outline-none bg-transparent text-center transition-all ease-linear h-full border w-[40px] focus:border-theme'
           />
@@ -93,7 +123,7 @@ const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
             <LuPlus />
           </button>
         </div>
-        <span className='text-sm font-semibold'>
+        <span className='text-sm font-semibold w-[80px] text-end'>
           {formatPrice(price * qty)}
         </span>
       </div>

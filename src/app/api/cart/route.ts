@@ -9,7 +9,7 @@ export const GET = async () => {
     if (!user) {
       return NextResponse.json(
         { message: 'unauthorized request' },
-        { status: 401 }
+        { status: 200 }
       )
     }
 
@@ -79,7 +79,7 @@ export const POST = async (req: Request) => {
       data: {
         cartId: cartId,
         productId: productId,
-        quantity: quantity,
+        quantity: quantity > 10 ? 10 : quantity,
       },
       include: {
         product: true,
@@ -98,6 +98,7 @@ export const POST = async (req: Request) => {
 export const PUT = async (req: Request) => {
   try {
     const body = await req.json()
+
     const { getUser } = getKindeServerSession()
     const user = await getUser()
 
@@ -137,6 +138,36 @@ export const PUT = async (req: Request) => {
   } catch (err) {
     return NextResponse.json(
       { message: 'Error incrementing product', err: err },
+      { status: 500 }
+    )
+  }
+}
+
+export const DELETE = async (req: Request) => {
+  try {
+    const { searchParams } = new URL(req.url)
+    const id = searchParams.get('id')
+
+    if (!id) {
+      return NextResponse.json(
+        { message: 'Id parameter must be provided' },
+        { status: 400 }
+      )
+    }
+
+    const deletedCartItem = await prisma.cartItems.delete({
+      where: {
+        id: Number(id),
+      },
+      include: {
+        product: true,
+      },
+    })
+
+    return NextResponse.json({ deletedCartItem }, { status: 200 })
+  } catch (err) {
+    return NextResponse.json(
+      { message: 'Error deleting the product', err: err },
       { status: 500 }
     )
   }
