@@ -13,6 +13,7 @@ import { Product } from '@prisma/client'
 
 const AddToCart = ({ product }: { product: Product }) => {
   const { cart, setCart } = useContext(AppContext)
+  const [loading, setLoading] = useState<boolean>(false)
   const [qty, setQty] = useState(1)
 
   const incrementQty = () => {
@@ -33,17 +34,21 @@ const AddToCart = ({ product }: { product: Product }) => {
     if (!cart) {
       return alert('Something went wrong on our end')
     }
+    setLoading(true)
     const alreadyInCart = cart?.cartItems.find((cartItem) => {
       return cartItem.productId === productId
     })
     if (alreadyInCart) {
-      return alert('already in cart')
+      if (alreadyInCart.quantity + qty > 10) {
+        return alert('too much qty')
+      }
     }
     const { data } = await axios.post('/api/cart', {
       productId: productId,
       cartId: cart.id,
       quantity: qty,
     })
+    setLoading(false)
 
     if (data.cartItem) {
       setCart((prev) => ({
@@ -89,11 +94,20 @@ const AddToCart = ({ product }: { product: Product }) => {
           </button>
         </div>
         <button
+          disabled={loading}
           onClick={() => addToCart(product.id)}
           className='rounded-full px-5 py-1 bg-theme h-[42px] text-white flex items-center gap-2 hover:bg-theme/80 transition-all duration-200 ease-linear'
         >
-          <span>In shopping cart</span>
-          <FiShoppingCart className='text-xl' />
+          {!loading ? (
+            <div className='flex items-center'>
+              <span>In shopping cart</span>
+              <FiShoppingCart className='text-xl' />
+            </div>
+          ) : (
+            <div className='flex items-center gap-3'>
+              Loading <span className='loader scale-[35%]'></span>
+            </div>
+          )}
         </button>
       </div>
 

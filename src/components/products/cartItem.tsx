@@ -7,6 +7,7 @@ import { formatPrice } from '@/lib/utils'
 import { LuMinus, LuPlus } from 'react-icons/lu'
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '@/context/contextProvider'
+import { removeFromCart, updateProductQty } from '@/services/cart'
 
 interface CartItemProps {
   id: string
@@ -14,9 +15,10 @@ interface CartItemProps {
   qty: number
   image: string
   title: string
+  itemId: number
 }
 
-const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
+const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
   const { cart, setCart } = useContext(AppContext)
   const [quantity, setQuantity] = useState<number>(qty)
 
@@ -40,13 +42,17 @@ const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
   const incrementQty = () => {
     if (quantity >= 10) return
     setQuantity((prev) => {
+      updateProductQty(itemId, prev + 1)
       return prev + 1
     })
   }
 
   const decrementQty = () => {
     if (quantity <= 1) return
-    setQuantity((prev) => prev - 1)
+    setQuantity((prev) => {
+      updateProductQty(itemId, prev - 1)
+      return prev - 1
+    })
   }
 
   return (
@@ -60,7 +66,19 @@ const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
           <span className='text-sm text-gray-600'>{id}</span>
         </div>
       </div>
-      <button className='absolute right-3 top-2'>
+      <button
+        onClick={async () => {
+          await removeFromCart(itemId)
+          if (!cart) return
+          setCart((prev) => ({
+            ...prev!,
+            cartItems: prev!.cartItems.filter((item) => {
+              return item.id !== itemId
+            }),
+          }))
+        }}
+        className='absolute right-3 top-2'
+      >
         <IoIosClose className='text-[21px] text-gray-600' />
       </button>
       <div className='w-full flex items-center justify-between'>
@@ -80,9 +98,11 @@ const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
               if (Number(e.target.value) < 1) {
                 return
               } else if (Number(e.target.value) > 10) {
+                updateProductQty(itemId, 10)
                 return setQuantity(10)
               }
               setQuantity(Number(e.target.value))
+              updateProductQty(itemId, quantity)
             }}
             className='outline-none bg-transparent text-center transition-all ease-linear h-full border w-[40px] focus:border-theme'
           />
@@ -93,7 +113,7 @@ const CartItem = ({ price, qty, image, title, id }: CartItemProps) => {
             <LuPlus />
           </button>
         </div>
-        <span className='text-sm font-semibold'>
+        <span className='text-sm font-semibold w-[80px] text-end'>
           {formatPrice(price * qty)}
         </span>
       </div>

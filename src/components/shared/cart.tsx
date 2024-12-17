@@ -29,11 +29,12 @@ const Cart = () => {
               <IoClose className='text-2xl text-gray-600' />
             </button>
           </div>
-          <div className='flex flex-col items-start w-full'>
+          <div className='flex flex-col items-start w-full h-[70vh] overflow-auto'>
             {cart.cartItems.map((item) => {
               return (
                 <CartItem
                   id={item.product.id}
+                  itemId={item.id}
                   key={item.id}
                   title={item.product.title}
                   image={item.product.images[0]}
