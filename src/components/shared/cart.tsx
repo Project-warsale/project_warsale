@@ -6,10 +6,13 @@ import { IoClose } from 'react-icons/io5'
 import { useContext } from 'react'
 import CartItem from '../products/cartItem'
 import { formatPrice } from '@/lib/utils'
-import { clearCart } from '@/services/cart'
+import { clearCart, createCheckoutSession } from '@/services/cart'
 import { toast } from 'sonner'
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md'
 import Link from 'next/link'
+import { loadStripe } from '@stripe/stripe-js'
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_API_KEY!)
 
 const Cart = () => {
   const { cartOpen, cart, setCart, setCartOpen, total } = useContext(AppContext)
@@ -77,13 +80,25 @@ const Cart = () => {
               <h4>{formatPrice(total)}</h4>
             </div>
             <div className='w-full flex flex-col gap-2 items-start px-5'>
-              <button className='w-full text-center py-3.5 bg-theme text-white hover:bg-white border border-theme hover:text-theme transition-all duration-300 ease-linear'>
+              <button
+                onClick={async () => {
+                  const response = await createCheckoutSession(cart.cartItems)
+                  if (response.id) {
+                    const stripe = await stripePromise
+                    const { error } = await stripe?.redirectToCheckout({
+                      sessionId: response.id,
+                    })
+                  }
+                }}
+                className='w-full text-center py-3.5 bg-theme text-white hover:bg-white border border-theme hover:text-theme transition-all duration-300 ease-linear'
+              >
                 Checkout
               </button>
 
               <button
                 onClick={async () => {
-                  const response = await clearCart(cart.id)
+                  await clearCart(cart.id)
+
                   if (response.status) {
                     setCart(null)
                     toast('Cart has been cleared.')

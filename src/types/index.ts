@@ -4,7 +4,7 @@ export interface CartProductType extends Product {
   qty: number
 }
 
-interface CartItemType extends CartItems {
+export interface CartItemType extends CartItems {
   product: Product
 }
 
