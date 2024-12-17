@@ -1,8 +1,8 @@
 'use client'
 
 import { CartProductType } from '@/types'
-import { createContext, useState } from 'react'
-import { ReactNode } from 'react'
+import { createContext, useState, useEffect, ReactNode } from 'react'
+import axios from 'axios'
 
 interface defaultValue {
   cart: CartProductType[]
@@ -16,6 +16,17 @@ export const AppContext = createContext<defaultValue>({
 
 const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartProductType[]>([])
+
+  useEffect(() => {
+    const getCart = async () => {
+      const { data } = await axios.get('/api/cart')
+      setCart(data.cart)
+    }
+    getCart()
+  }, [])
+
+  console.log(cart)
+
   return (
     <AppContext.Provider
       value={{

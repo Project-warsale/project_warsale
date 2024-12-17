@@ -51,6 +51,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
       <ProductInformation
         description={product.description}
         specifications={product.specifications}
+        brand={product.brand}
       />
     </div>
   )

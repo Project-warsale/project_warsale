@@ -15,14 +15,22 @@ const ProductDescription = ({ description }: { description: string }) => {
 
 const ProductSpecifications = ({
   specifications,
+  brand,
 }: {
   specifications: Specifications
+  brand: string
 }) => {
   console.log(specifications)
   const { size, weight, color, model } = specifications
   return (
     <div className='w-full flex justify-center'>
       <div className='w-full flex flex-col items-start gap-3'>
+        {brand && (
+          <div className='w-1/2 flex items-center gap-10 border-b pb-2 border-black/50'>
+            <span>Brand: </span>
+            <span>{brand}</span>
+          </div>
+        )}
         {model && (
           <div className='w-1/2 flex items-center gap-10 border-b pb-2 border-black/50'>
             <span>Model: </span>
@@ -60,9 +68,11 @@ const ProductSpecifications = ({
 const ProductInformation = ({
   description,
   specifications,
+  brand,
 }: {
   description: string
   specifications: Specifications
+  brand: string
 }) => {
   const [selectedInfo, setSelectedInfo] = useState<
     'information' | 'specifications'
@@ -92,7 +102,7 @@ const ProductInformation = ({
       {selectedInfo === 'information' ? (
         <ProductDescription description={description} />
       ) : (
-        <ProductSpecifications specifications={specifications} />
+        <ProductSpecifications specifications={specifications} brand={brand} />
       )}
     </div>
   )
