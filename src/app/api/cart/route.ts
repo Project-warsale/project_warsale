@@ -18,7 +18,11 @@ export const GET = async () => {
         userId: user.id,
       },
       include: {
-        cartItems: true,
+        cartItems: {
+          include: {
+            product: true,
+          },
+        },
       },
     })
 
@@ -30,7 +34,11 @@ export const GET = async () => {
           userId: user.id,
         },
         include: {
-          cartItems: true,
+          cartItems: {
+            include: {
+              product: true,
+            },
+          },
         },
       })
 
@@ -72,6 +80,9 @@ export const POST = async (req: Request) => {
         cartId: cartId,
         productId: productId,
         quantity: quantity,
+      },
+      include: {
+        product: true,
       },
     })
 
