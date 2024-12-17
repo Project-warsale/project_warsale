@@ -8,6 +8,7 @@ import { LuMinus, LuPlus } from 'react-icons/lu'
 import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '@/context/contextProvider'
 import { removeFromCart, updateProductQty } from '@/services/cart'
+import { toast } from 'sonner'
 
 interface CartItemProps {
   id: string
@@ -39,6 +40,10 @@ const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
     updateCartClient(quantity)
   }, [quantity])
 
+  useEffect(() => {
+    setQuantity(qty)
+  }, [qty])
+
   const incrementQty = () => {
     if (quantity >= 10) return
     setQuantity((prev) => {
@@ -68,7 +73,7 @@ const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
       </div>
       <button
         onClick={async () => {
-          await removeFromCart(itemId)
+          const data = await removeFromCart(itemId)
           if (!cart) return
           setCart((prev) => ({
             ...prev!,
@@ -76,6 +81,11 @@ const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
               return item.id !== itemId
             }),
           }))
+          if (data.deletedCartItem) {
+            toast.success(
+              `${data.deletedCartItem.product.title} has been removed from the cart.`
+            )
+          }
         }}
         className='absolute right-3 top-2'
       >

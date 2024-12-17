@@ -159,6 +159,9 @@ export const DELETE = async (req: Request) => {
       where: {
         id: Number(id),
       },
+      include: {
+        product: true,
+      },
     })
 
     return NextResponse.json({ deletedCartItem }, { status: 200 })

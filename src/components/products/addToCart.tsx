@@ -10,11 +10,29 @@ import { TbWallet } from 'react-icons/tb'
 import { AppContext } from '@/context/contextProvider'
 import axios from 'axios'
 import { Product } from '@prisma/client'
+import { toast } from 'sonner'
+import { updateProductQty } from '@/services/cart'
 
 const AddToCart = ({ product }: { product: Product }) => {
   const { cart, setCart } = useContext(AppContext)
   const [loading, setLoading] = useState<boolean>(false)
   const [qty, setQty] = useState(1)
+
+  const updateCartClient = (newQty: number) => {
+    if (cart) {
+      const updatedCartItems = cart.cartItems.map((productItem) => {
+        if (productItem.productId === product.id) {
+          return { ...productItem, quantity: newQty }
+        }
+        return productItem
+      })
+
+      setCart({
+        ...cart,
+        cartItems: updatedCartItems,
+      })
+    }
+  }
 
   const incrementQty = () => {
     if (qty >= 10) {
@@ -32,7 +50,7 @@ const AddToCart = ({ product }: { product: Product }) => {
 
   const addToCart = async (productId: string) => {
     if (!cart) {
-      return alert('Something went wrong on our end')
+      return toast.error('There was an error on our end')
     }
     setLoading(true)
     const alreadyInCart = cart?.cartItems.find((cartItem) => {
@@ -40,9 +58,26 @@ const AddToCart = ({ product }: { product: Product }) => {
     })
     if (alreadyInCart) {
       if (alreadyInCart.quantity + qty > 10) {
-        return alert('too much qty')
+        setLoading(false)
+        return toast.error(
+          'The requested qty exceeds the maximum qty allowed in shopping cart.'
+        )
+      } else {
+        const targetCartItem = cart.cartItems.find(
+          (item) => item.productId === product.id
+        )
+        if (targetCartItem) {
+          await updateProductQty(
+            targetCartItem.id,
+            qty + targetCartItem.quantity
+          )
+          updateCartClient(qty + targetCartItem.quantity)
+          setLoading(false)
+        }
+        return
       }
     }
+
     const { data } = await axios.post('/api/cart', {
       productId: productId,
       cartId: cart.id,
