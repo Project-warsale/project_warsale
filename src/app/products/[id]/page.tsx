@@ -45,7 +45,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
           <span className='text-lg font-semibold'>
             {formatPrice(product.price)}
           </span>
-          <AddToCart />
+          <AddToCart product={product} />
         </div>
       </div>
       <ProductInformation

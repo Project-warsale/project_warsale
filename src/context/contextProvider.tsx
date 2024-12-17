@@ -1,21 +1,21 @@
 'use client'
 
-import { CartProductType } from '@/types'
 import { createContext, useState, useEffect, ReactNode } from 'react'
 import axios from 'axios'
+import { Cart } from '@/types'
 
 interface defaultValue {
-  cart: CartProductType[]
-  setCart: React.Dispatch<React.SetStateAction<CartProductType[]>>
+  cart: null | Cart
+  setCart: React.Dispatch<React.SetStateAction<Cart | null>>
 }
 
 export const AppContext = createContext<defaultValue>({
-  cart: [],
-  setCart: () => [],
+  cart: null,
+  setCart: () => null,
 })
 
 const ContextProvider = ({ children }: { children: ReactNode }) => {
-  const [cart, setCart] = useState<CartProductType[]>([])
+  const [cart, setCart] = useState<Cart | null>(null)
 
   useEffect(() => {
     const getCart = async () => {

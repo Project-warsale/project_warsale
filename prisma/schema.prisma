@@ -23,7 +23,7 @@ model Product {
   discountedPrice  Int?
   specifications   Specifications? @relation(fields: [specificationsId], references: [id])
   specificationsId String?
-  CartItems        CartItems[]
+  cartItems        CartItems[]
 }
 
 model Specifications {
@@ -43,7 +43,7 @@ model Cart {
 
 model CartItems {
   id        Int     @id @default(autoincrement())
-  cart      Cart    @relation(fields: [cartId], references: [id])
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
   cartId    Int
   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
   productId String
