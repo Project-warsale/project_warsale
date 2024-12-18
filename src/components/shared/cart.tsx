@@ -3,7 +3,7 @@
 import { AppContext } from '@/context/contextProvider'
 import { cn } from '@/lib/utils'
 import { IoClose } from 'react-icons/io5'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import CartItem from '../products/cartItem'
 import { formatPrice } from '@/lib/utils'
 import { clearCart, createCheckoutSession } from '@/services/cart'
@@ -16,6 +16,8 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_API_KEY!)
 
 const Cart = () => {
   const { cartOpen, cart, setCart, setCartOpen, total } = useContext(AppContext)
+  const [stripeLoading, setStripeLoading] = useState<boolean>(false)
+
   return (
     <div
       className={cn(
@@ -77,27 +79,43 @@ const Cart = () => {
           <div className='w-full flex flex-col items-start gap-3'>
             <div className='w-full flex items-center justify-between px-5 border-b py-3'>
               <h4 className='text-2xl font-semibold'>Subtotal :</h4>
-              <h4>{formatPrice(total)}</h4>
+              <h4>
+                {formatPrice(total + total * 0.21)}
+                <span className='text-sm text-gray-700'>
+                  (Includes {formatPrice(total * 0.21)} VAT)
+                </span>
+              </h4>
             </div>
             <div className='w-full flex flex-col gap-2 items-start px-5'>
               <button
+                disabled={stripeLoading}
                 onClick={async () => {
+                  setStripeLoading(true)
                   const response = await createCheckoutSession(cart.cartItems)
+                  setStripeLoading(false)
                   if (response.id) {
                     const stripe = await stripePromise
-                    const { error } = await stripe?.redirectToCheckout({
+                    await stripe?.redirectToCheckout({
                       sessionId: response.id,
                     })
+                  } else {
+                    toast.error('Something went wrong proccessing the payment')
                   }
                 }}
-                className='w-full text-center py-3.5 bg-theme text-white hover:bg-white border border-theme hover:text-theme transition-all duration-300 ease-linear'
+                className='w-full text-center py-3.5 group bg-theme text-white hover:bg-white border border-theme hover:text-theme transition-all duration-300 ease-linear'
               >
-                Checkout
+                {stripeLoading ? (
+                  <span className='flex items-center gap-4 justify-center text-white group-hover:text-theme duration-300 transition-all ease-linear'>
+                    Processing <span className='loader scale-[40%]'></span>
+                  </span>
+                ) : (
+                  'Checkout'
+                )}
               </button>
 
               <button
                 onClick={async () => {
-                  await clearCart(cart.id)
+                  const response = await clearCart(cart.id)
 
                   if (response.status) {
                     setCart(null)
