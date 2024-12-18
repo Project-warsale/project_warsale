@@ -26,7 +26,9 @@ const BottomHeader = () => {
         <div className='rounded-full h-[40px] w-[40px] bg-theme/20 flex items-center justify-center'>
           <LuTrophy className='text-xl text-theme' />
         </div>
-        <span className='text-[15px] font-semibold'>Cusomers give us 9/10</span>
+        <span className='text-[15px] font-semibold'>
+          Customers give us 9/10
+        </span>
       </div>
       <div className='flex items-center gap-2 max-xl:hidden'>
         <div className='rounded-full h-[40px] w-[40px] bg-theme/20 flex items-center justify-center'>

@@ -25,22 +25,29 @@ const Header = () => {
             alt='logo'
             width={100}
             height={100}
-            className='object-contain'
+            className='object-contain max-lg:!w-[70px] max-lg:!h-[70px]'
           />
         </Link>
-        <Search />
+        <div className='max-lg:hidden'>
+          <Search />
+        </div>
         <div className='flex items-center gap-6'>
           <Link href='/customer-services' className='flex items-center gap-5'>
             <div className='flex items-center gap-1.5 w-full text-[#0A64B2] font-bold text-[15px] hover:opacity-80 transition duration-300'>
-              <span className='whitespace-nowrap'>Customer Service</span>
-              <FaArrowRight className='text-lg' />
+              <span className='whitespace-nowrap max-sm:hidden'>
+                Customer Service
+              </span>
+              <FaArrowRight className='text-lg max-sm:hidden' />
+              <LuHeadset className='text-2xl max-lg:text-xl text-[#0c2e4d]' />
             </div>
-            <LuHeadset className='text-3xl text-[#0c2e4d]' />
           </Link>
           <CartIcon />
           <Auth />
         </div>
       </header>
+      <div className='max-lg:block hidden px-5'>
+        <Search />
+      </div>
       <BottomHeader />
     </>
   )
