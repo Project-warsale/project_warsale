@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaArrowRight } from 'react-icons/fa6'
@@ -6,8 +8,14 @@ import Auth from './auth'
 import Search from './search'
 import BottomHeader from './bottomHeader'
 import CartIcon from './cartIcon'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
+  const pathname = usePathname()
+  if (pathname === '/order') {
+    return <></>
+  }
+
   return (
     <>
       <header className='w-full flex items-center justify-between gap-5 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>

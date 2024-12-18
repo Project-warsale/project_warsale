@@ -1,14 +1,20 @@
-import React from 'react'
+'use client'
+
 import { service, Producten } from '../../data/index'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 interface MenuItem {
   href: string
   label: string
 }
 
-const Footer: React.FC = () => {
+const Footer = () => {
+  const pathname = usePathname()
+  if (pathname === '/order') {
+    return <></>
+  }
   return (
     <footer className='w-full flex flex-col items-center bg-[#FBFAF8] pt-6 mt-10'>
       <div className='footer-content'>
