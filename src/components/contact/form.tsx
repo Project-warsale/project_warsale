@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { sendUsEmail } from '@/services/contact'
 
 const ContactForm = () => {
   const [name, setName] = useState<string>('')
@@ -9,7 +10,19 @@ const ContactForm = () => {
   const [question, setQuestion] = useState<string>('')
 
   return (
-    <form className='w-full flex flex-col items-start gap-7 mt-2'>
+    <form
+      onSubmit={async (e: React.FormEvent) => {
+        e.preventDefault()
+        await sendUsEmail(
+          [setName, setEmail, setPhoneNumber, setQuestion],
+          email,
+          name,
+          question,
+          phoneNumber
+        )
+      }}
+      className='w-full flex flex-col items-start gap-7 mt-2'
+    >
       <div className='flex w-full flex-col items-start gap-1'>
         <label htmlFor='name' className='font-semibold text-[15px]'>
           Name <span className='text-red-700'>*</span>
