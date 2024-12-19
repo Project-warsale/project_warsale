@@ -21,8 +21,10 @@ const Cart = () => {
   return (
     <div
       className={cn(
-        'w-[450px] fixed right-0 top-0 transition-all duration-500 h-screen shadow-lg bg-white z-[999]',
-        cartOpen ? 'translate-x-0' : 'translate-x-[500px]'
+        'w-[450px] fixed right-0 top-0 max-md:w-full transition-all duration-500 h-screen shadow-lg bg-white z-[999]',
+        cartOpen
+          ? 'translate-x-0'
+          : 'translate-x-[500px] max-md:translate-x-[700px]'
       )}
     >
       {!cart || cart.cartItems.length === 0 ? (
@@ -43,7 +45,7 @@ const Cart = () => {
             onClick={() => {
               setCartOpen(false)
             }}
-            href='/'
+            href='/products'
             className='bg-theme text-white px-5 py-2 hover:bg-theme/80 transition-all duration-200 ease-linear'
           >
             Return to shop
@@ -71,6 +73,7 @@ const Cart = () => {
                   title={item.product.title}
                   image={item.product.images[0]}
                   price={item.product.price}
+                  discountedPrice={item.product.discountedPrice}
                   qty={item.quantity}
                 />
               )

@@ -13,13 +13,22 @@ import { toast } from 'sonner'
 interface CartItemProps {
   id: string
   price: number
+  discountedPrice: number | null
   qty: number
   image: string
   title: string
   itemId: number
 }
 
-const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
+const CartItem = ({
+  price,
+  qty,
+  image,
+  title,
+  id,
+  itemId,
+  discountedPrice,
+}: CartItemProps) => {
   const { cart, setCart } = useContext(AppContext)
   const [quantity, setQuantity] = useState<number>(qty)
 
@@ -92,7 +101,9 @@ const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
         <IoIosClose className='text-[21px] text-gray-600' />
       </button>
       <div className='w-full flex items-center justify-between'>
-        <span className='text-[15px] font-semibold'>{formatPrice(price)}</span>
+        <span className='text-[15px] font-semibold'>
+          {formatPrice(discountedPrice || price)}
+        </span>
         <div className='flex items-center h-[35px]'>
           <button
             onClick={decrementQty}
@@ -124,7 +135,7 @@ const CartItem = ({ price, qty, image, title, id, itemId }: CartItemProps) => {
           </button>
         </div>
         <span className='text-sm font-semibold w-[80px] text-end'>
-          {formatPrice(price * qty)}
+          {formatPrice((discountedPrice || price) * qty)}
         </span>
       </div>
     </div>

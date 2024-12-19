@@ -15,10 +15,12 @@ export const POST = async (req: Request) => {
           name: item.product.title,
           images: [item.product.images[0]],
           description: `(Includes ${formatPrice(
-            item.product.price * 0.21 * item.quantity
+            (item.product.discountedPrice ?? item.product.price) *
+              0.21 *
+              item.quantity
           )} VAT)`,
         },
-        unit_amount: item.product.price * 121,
+        unit_amount: (item.product.discountedPrice ?? item.product.price) * 121,
       },
       quantity: item.quantity,
     }))

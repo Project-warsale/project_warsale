@@ -40,7 +40,10 @@ const ContextProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const calculateTotal = () => {
       const totalInstance = cart?.cartItems.reduce((acc, item) => {
-        return item.product.price * item.quantity + acc
+        return (
+          (item.product.discountedPrice || item.product.price) * item.quantity +
+          acc
+        )
       }, 0)
       if (totalInstance) {
         setTotal(totalInstance)
