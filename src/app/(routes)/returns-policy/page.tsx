@@ -1,3 +1,13 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Returns Policy',
+  openGraph: {
+    title: 'Returns Policy',
+    description: 'This page is about policy of order returns.',
+  },
+}
+
 const ReturnPolicy: React.FC = () => {
   return (
     <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>

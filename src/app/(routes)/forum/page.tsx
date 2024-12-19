@@ -1,3 +1,13 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Forum',
+  openGraph: {
+    title: 'Forum',
+    description: 'Our Forums',
+  },
+}
+
 const ForumPage: React.FC = () => {
   return (
     <div className='klachten-procedure'>

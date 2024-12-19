@@ -1,3 +1,13 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Terms Policy',
+  openGraph: {
+    title: 'Terms Policy',
+    description: 'Terms policy of the site.',
+  },
+}
+
 const TermsAndConditions: React.FC = () => {
   return (
     <div className='w-full p-50 bg-gray-50'>

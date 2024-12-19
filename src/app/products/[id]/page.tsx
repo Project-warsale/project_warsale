@@ -12,6 +12,29 @@ import { notFound } from 'next/navigation'
 import { formatPrice } from '@/lib/utils'
 import AddToCart from '@/components/products/addToCart'
 import ProductInformation from '@/components/products/productInformation'
+import { Metadata } from 'next'
+
+interface MetaDataProps {
+  params: Promise<{ id: string }>
+}
+
+export async function generateMetadata({
+  params,
+}: MetaDataProps): Promise<Metadata> {
+  const id = (await params).id
+
+  const product = await getProductById(id)
+
+  if (!product) return {}
+
+  return {
+    title: product.title,
+    description: product.description,
+    openGraph: {
+      images: [...product.images],
+    },
+  }
+}
 
 const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
