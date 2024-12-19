@@ -20,6 +20,7 @@ const Home = async () => {
             title={product.title}
             image={product.images[0]}
             price={product.price}
+            discontedPrice={product.discountedPrice}
           />
         ))}
       </div>

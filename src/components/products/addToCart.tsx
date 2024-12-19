@@ -101,7 +101,7 @@ const AddToCart = ({ product }: { product: Product }) => {
         <FaCheckCircle />
         Delivery time: 5-7 working days
       </span>
-      <div className='flex items-center gap-5'>
+      <div className='flex items-center gap-5 max-lg:flex-col max-lg:items-start'>
         <div className='flex items-center h-[45px]'>
           <button
             onClick={decrementQty}

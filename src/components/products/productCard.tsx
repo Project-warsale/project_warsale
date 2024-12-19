@@ -8,9 +8,16 @@ interface ProductCardProps {
   title: string
   price: number
   image: string
+  discontedPrice: number | null
 }
 
-const ProductCard = ({ title, price, image, id }: ProductCardProps) => {
+const ProductCard = ({
+  title,
+  price,
+  image,
+  id,
+  discontedPrice,
+}: ProductCardProps) => {
   return (
     <Link
       href={`/products/${id}`}
@@ -25,7 +32,19 @@ const ProductCard = ({ title, price, image, id }: ProductCardProps) => {
         />
       </div>
       <h2 className='text-lg font-semibold'>{title}</h2>
-      <span>{formatPrice(price)}</span>
+      <div className='w-full'>
+        {discontedPrice ? (
+          <div className='w-full flex justify-between'>
+            <div className='relative w-fit'>
+              {formatPrice(price)}
+              <div className='absolute w-full h-[2px] bg-zinc-600 top-2.5' />
+            </div>
+            {formatPrice(discontedPrice)}
+          </div>
+        ) : (
+          formatPrice(price)
+        )}
+      </div>
       <span className='flex items-center gap-2 text-[#3A8323] text-sm font-medium mt-1'>
         <FaCheckCircle />
         Delivery time: 5-7 working days

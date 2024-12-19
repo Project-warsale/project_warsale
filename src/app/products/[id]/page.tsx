@@ -21,7 +21,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <div className='min-h-screen px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-6 w-full flex flex-col items-start gap-10'>
-      <div className='w-full flex items-center gap-3'>
+      <div className='w-full flex items-center gap-3 max-lg:flex-col'>
         <Carousel className='w-full'>
           <CarouselContent className='w-full h-full'>
             {product.images.map((src: string, idx: number) => (
@@ -40,11 +40,21 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
           <CarouselNext />
           <CarouselPrevious />
         </Carousel>
-        <div className='w-full flex flex-col items-start gap-2.5 ml-16'>
+        <div className='w-full flex flex-col items-start gap-2.5 ml-16 max-lg:ml-0'>
           <h2 className='text-3xl font-semibold'>{product.title}</h2>
-          <span className='text-lg font-semibold'>
-            {formatPrice(product.price)}
-          </span>
+          <div className='text-lg font-semibold'>
+            {product.discountedPrice ? (
+              <div className='w-full flex items-center gap-5'>
+                <div className='relative w-fit'>
+                  {formatPrice(product.price)}
+                  <div className='absolute w-full h-[2px] bg-zinc-600 top-3' />
+                </div>
+                {formatPrice(product.discountedPrice)}
+              </div>
+            ) : (
+              formatPrice(product.price)
+            )}
+          </div>
           <AddToCart product={product} />
         </div>
       </div>

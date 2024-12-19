@@ -11,6 +11,7 @@ const Products = async () => {
           id={product.id}
           title={product.title}
           price={product.price}
+          discontedPrice={product.discountedPrice}
           image={product.images[0]}
         />
       ))}
