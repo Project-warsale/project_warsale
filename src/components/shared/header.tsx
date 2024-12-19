@@ -25,7 +25,7 @@ const Header = () => {
             alt='logo'
             width={100}
             height={100}
-            className='object-contain max-lg:!w-[70px] max-lg:!h-[70px]'
+            className='object-contain max-lg:!w-[80px] max-lg:!h-[80px]'
           />
         </Link>
         <div className='max-lg:hidden w-full'>
@@ -33,7 +33,7 @@ const Header = () => {
         </div>
         <div className='flex items-center gap-6'>
           <Link href='/customer-services' className='flex items-center gap-5'>
-            <div className='flex items-center gap-1.5 w-full text-[#0A64B2] font-bold text-[15px] hover:opacity-80 transition duration-300'>
+            <div className='flex items-center gap-3 w-full text-[#0A64B2] font-bold text-[15px] hover:opacity-80 transition duration-300'>
               <span className='whitespace-nowrap max-sm:hidden'>
                 Customer Service
               </span>
