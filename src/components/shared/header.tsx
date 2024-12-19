@@ -28,7 +28,7 @@ const Header = () => {
             className='object-contain max-lg:!w-[70px] max-lg:!h-[70px]'
           />
         </Link>
-        <div className='max-lg:hidden'>
+        <div className='max-lg:hidden w-full'>
           <Search />
         </div>
         <div className='flex items-center gap-6'>
@@ -45,7 +45,7 @@ const Header = () => {
           <Auth />
         </div>
       </header>
-      <div className='max-lg:block hidden px-5'>
+      <div className='max-lg:block hidden px-5 w-full'>
         <Search />
       </div>
       <BottomHeader />

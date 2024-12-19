@@ -1,11 +1,12 @@
 'use client'
 import { useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
+import SearchResults from './results'
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState<string>('')
   return (
-    <div className='w-full bg-[#FBFAF8] rounded-full h-[45px] flex items-center pr-5'>
+    <div className='w-full bg-[#FBFAF8] rounded-full h-[45px] flex items-center pr-5 relative'>
       <input
         id='search'
         type='text'
@@ -19,6 +20,10 @@ const Search = () => {
       <label htmlFor='search' className='cursor-pointer'>
         <IoSearch className='text-xl text-[#6A655E]' />
       </label>
+      <SearchResults
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
     </div>
   )
 }
