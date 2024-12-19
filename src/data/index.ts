@@ -82,3 +82,61 @@ export const customerServices = [
     href: '/complaints-procedure',
   },
 ]
+
+export const pages = [
+  {
+    title: 'Contact Us',
+    description: 'On this page, you will be able to send us an email.',
+    href: '/contact',
+  },
+  {
+    title: 'Cookies Policy',
+    description:
+      'Learn about how we use cookies on our website and your options.',
+    href: '/cookies-policy',
+  },
+  {
+    title: 'Customer Services',
+    description:
+      'Access customer service for inquiries, assistance, and support.',
+    href: '/customer-services',
+  },
+  {
+    title: 'Delivery Options',
+    description:
+      'Explore the various delivery options available for your orders.',
+    href: '/delivery-options',
+  },
+  {
+    title: 'Forum',
+    description:
+      'Join discussions and connect with our community in the forum.',
+    href: '/forum',
+  },
+  {
+    title: 'Privacy Policy',
+    description:
+      'Understand how we handle and protect your personal information.',
+    href: '/privacy-policy',
+  },
+  {
+    title: 'Products',
+    description: 'Browse our collection of products and find what you need.',
+    href: '/products',
+  },
+  {
+    title: 'Returns Policy',
+    description: 'Review our policy for returning items and obtaining refunds.',
+    href: '/returns-policy',
+  },
+  {
+    title: 'Terms Policy',
+    description: 'Read the terms and conditions that apply to our services.',
+    href: '/terms-policy',
+  },
+  {
+    title: 'Warranty',
+    description: 'Find details about the warranty coverage for your purchases.',
+    href: '/warranty',
+  },
+]

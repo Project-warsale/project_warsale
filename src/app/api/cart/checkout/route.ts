@@ -32,7 +32,7 @@ export const POST = async (req: Request) => {
       success_url: `${origin}/order?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/`,
       shipping_address_collection: {
-        allowed_countries: ['NL', 'BE', 'US'],
+        allowed_countries: ['NL', 'BE'],
       },
     })
 
