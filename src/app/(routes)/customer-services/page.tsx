@@ -1,6 +1,17 @@
 import { customerServices } from '@/data'
 import ServiceCard from '@/components/customer-services/serviceCard'
 
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Customer Services',
+  openGraph: {
+    title: 'Customer Services',
+    description:
+      'On this page you will be able to preview customer services we offer.',
+  },
+}
+
 const CustomerServices = () => {
   return (
     <div className='w-full flex flex-col items-start gap-5 px-3 md:px-5 lg:px-20 xl:px-32 2xl:px-56 mt-7'>

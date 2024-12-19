@@ -1,3 +1,13 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Payment options',
+  openGraph: {
+    title: 'Payment options',
+    description: 'Payment options we offer',
+  },
+}
+
 const PaymentOptions: React.FC = () => {
   return (
     <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>

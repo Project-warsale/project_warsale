@@ -1,5 +1,14 @@
 import { getProducts } from '@/actions/products/actions'
 import ProductCard from '@/components/products/productCard'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Products',
+    template: '%s | Warsale Products',
+  },
+  description: 'Get Medit kits and other products at Warsale.',
+}
 
 const Products = async () => {
   const products = await getProducts()

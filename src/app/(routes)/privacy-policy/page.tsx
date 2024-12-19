@@ -1,3 +1,14 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  openGraph: {
+    title: 'Privacy Policy',
+    description:
+      'Here you will find out how we use your information on the site.',
+  },
+}
+
 const PrivacyPolicy: React.FC = () => {
   return (
     <div className='privacy-policy'>

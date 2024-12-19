@@ -1,4 +1,12 @@
-import React from 'react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Warranty Policy',
+  openGraph: {
+    title: 'Warranty Policy',
+    description: 'On this page you will find about our warranty policy.',
+  },
+}
 
 const WarrantyPolicy: React.FC = () => {
   return (
