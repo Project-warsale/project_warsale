@@ -18,14 +18,14 @@ const Header = () => {
 
   return (
     <>
-      <header className='w-full flex items-center justify-between gap-5 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
+      <header className='w-full flex items-center justify-between gap-5 max-lg:mb-2 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
         <Link href='/' className='min-w-[100px]'>
           <Image
             src='/logo.png'
             alt='logo'
-            width={100}
-            height={100}
-            className='object-contain max-lg:!w-[80px] max-lg:!h-[80px]'
+            width={70}
+            height={70}
+            className='object-contain max-lg:!w-[60px] max-lg:!h-[60px]'
           />
         </Link>
         <div className='max-lg:hidden w-full'>

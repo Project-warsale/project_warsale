@@ -1,6 +1,6 @@
 'use client'
 
-import { service, Producten } from '../../data/index'
+import { service } from '../../data/index'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -21,9 +21,8 @@ const Footer = () => {
         <div className='container'>
           <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-4'>
             <FooterColumn title='Service' items={service} />
-            <FooterColumn title='Products' items={Producten} />
             <div className='footer-col'>
-              <h2 className='text-lg font-semibold mb-2'>Allprepare</h2>
+              <h2 className='text-lg font-semibold mb-2'>Safekit</h2>
               <div className='footer-col-content'>
                 <span>Avenue Corpus Den Hoorn 108</span>
                 <br />
