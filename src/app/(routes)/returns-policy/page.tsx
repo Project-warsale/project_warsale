@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const ReturnPolicy: React.FC = () => {
   return (
-    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
+    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
       <h1 className='text-2xl font-semibold text-[#333] mb-6'>Retourneren</h1>
 
       <section className='mb-8'>

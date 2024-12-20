@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className='privacy-policy'>
+    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
       <h1>Privacybeleid</h1>
       <p>
         <strong>Versie van 29 mei 2018</strong>

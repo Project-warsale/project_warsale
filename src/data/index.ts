@@ -9,6 +9,7 @@ export const service = [
   { href: '/payment-options', label: 'Payment options' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
   { href: '/terms-policy', label: 'General terms and conditions' },
+  { href: '/warranty', label: 'Warranty' },
   { href: '/cookies-policy', label: 'Cookies Policy' },
   { href: '/returns-policy', label: 'Return Policy' },
   { href: '/forum', label: 'Forum' },
