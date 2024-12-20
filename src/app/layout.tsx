@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     default: 'Safekit',
     template: '%s | Safekit',
   },
+  description: 'Get medical kits at Safekit.',
   openGraph: {
     title: 'Safekit',
     images: '/logo.png',
@@ -33,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${recursive.className} antialiased overflow-x-hidden`}>
+      <body
+        className={`${recursive.className} antialiased overflow-x-hidden pt-3`}
+      >
         <ContextProvider>
           <Header />
           {children}

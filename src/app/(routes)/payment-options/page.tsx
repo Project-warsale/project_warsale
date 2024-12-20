@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const PaymentOptions: React.FC = () => {
   return (
-    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
+    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
       <h1 className='text-3xl font-bold mb-6'>Betaalmogelijkheden</h1>
 
       <p className='text-sm mb-6'>

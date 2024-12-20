@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const DeliveryCollection: React.FC = () => {
   return (
-    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
+    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
       <h1 className='text-3xl font-bold mb-6'>Bezorgen en Afhalen</h1>
 
       <section className='mb-8'>

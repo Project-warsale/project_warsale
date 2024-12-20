@@ -5,14 +5,14 @@ import { CgFileDocument } from 'react-icons/cg'
 import { MdOutlinePrivacyTip } from 'react-icons/md'
 
 export const service = [
-  { href: '/bestellen-en-betalen', label: 'Bestellen en betalen' },
-  { href: '/bezorgen-en-afhalen', label: 'Bezorgen & afhalen' },
+  { href: '/delivery-options', label: 'Delivery options' },
+  { href: '/payment-options', label: 'Payment options' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/algemene-voorwaarden', label: 'Algemene voorwaarden' },
-  { href: '/cookies', label: 'Cookies' },
-  { href: '/retourbeleid', label: 'Retourbeleid' },
-  { href: '/reviews', label: 'Reviews' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/terms-policy', label: 'General terms and conditions' },
+  { href: '/warranty', label: 'Warranty' },
+  { href: '/cookies-policy', label: 'Cookies Policy' },
+  { href: '/returns-policy', label: 'Return Policy' },
+  { href: '/forum', label: 'Forum' },
   { href: '/contact', label: 'Contact' },
 ]
 export const Producten = [

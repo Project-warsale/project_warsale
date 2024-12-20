@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const TermsAndConditions: React.FC = () => {
   return (
-    <div className='w-full p-50 bg-gray-50'>
+    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
       <h1 className='text-2xl font-bold text-gray-800'>
         Algemene Voorwaarden Allprepare.com
       </h1>

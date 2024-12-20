@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const ForumPage: React.FC = () => {
   return (
-    <div className='klachten-procedure'>
+    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
       <h1>Klachtenprocedure</h1>
       <p>
         Mocht u toch een slechte ervaring hebben met onze service of producten,
