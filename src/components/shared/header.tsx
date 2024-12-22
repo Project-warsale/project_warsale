@@ -9,6 +9,7 @@ import Search from './search'
 import BottomHeader from './bottomHeader'
 import CartIcon from './cartIcon'
 import { usePathname } from 'next/navigation'
+import AnnouncmentBar from './announcmentBar'
 
 const Header = () => {
   const pathname = usePathname()
@@ -17,7 +18,8 @@ const Header = () => {
   }
 
   return (
-    <>
+    <div className='flex flex-col items-start w-full gap-4'>
+      <AnnouncmentBar />
       <header className='w-full flex items-center justify-between gap-5 max-lg:mb-2 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
         <Link href='/' className='min-w-[100px]'>
           <Image
@@ -49,7 +51,7 @@ const Header = () => {
         <Search />
       </div>
       <BottomHeader />
-    </>
+    </div>
   )
 }
 

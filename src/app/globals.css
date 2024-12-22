@@ -119,7 +119,9 @@
   height: 16px;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 32px 0 #fff, -32px 0 #fff;
+  box-shadow:
+    32px 0 #fff,
+    -32px 0 #fff;
   position: relative;
   animation: flash 0.5s ease-out infinite alternate;
 }
@@ -127,14 +129,46 @@
 @keyframes flash {
   0% {
     background-color: #fff2;
-    box-shadow: 32px 0 #fff2, -32px 0 #fff;
+    box-shadow:
+      32px 0 #fff2,
+      -32px 0 #fff;
   }
   50% {
     background-color: #fff;
-    box-shadow: 32px 0 #fff2, -32px 0 #fff2;
+    box-shadow:
+      32px 0 #fff2,
+      -32px 0 #fff2;
   }
   100% {
     background-color: #fff2;
-    box-shadow: 32px 0 #fff, -32px 0 #fff2;
+    box-shadow:
+      32px 0 #fff,
+      -32px 0 #fff2;
+  }
+}
+
+/* Default animation for larger screens */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
+  }
+}
+
+@media (max-width: 480px) {
+  .animate-scroll {
+    animation: scroll 10s linear infinite;
   }
 }

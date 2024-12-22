@@ -36,6 +36,17 @@ export const POST = async (req: Request) => {
       shipping_address_collection: {
         allowed_countries: ['NL', 'BE'],
       },
+      custom_fields: [
+        {
+          key: 'house_number',
+          label: {
+            type: 'custom',
+            custom: 'House Number',
+          },
+          type: 'text',
+          optional: false,
+        },
+      ],
     })
 
     return NextResponse.json({ id: session.id })

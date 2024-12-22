@@ -36,9 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${recursive.className} antialiased overflow-x-hidden pt-3`}
-      >
+      <body className={`${recursive.className} antialiased overflow-x-hidden`}>
         <ContextProvider>
           <Header />
           {children}
