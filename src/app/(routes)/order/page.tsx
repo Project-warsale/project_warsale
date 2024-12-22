@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { IoIosClose } from 'react-icons/io'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
-import prisma from '@/db/prisma'
+import ClientComponent from './ClientComponent'
 
 const OrderPage = async ({
   searchParams,
@@ -26,27 +26,6 @@ const OrderPage = async ({
 
   if (!user) {
     return notFound()
-  }
-
-  const cart = await prisma.cart.findUnique({
-    where: {
-      userId: user.id,
-    },
-    include: {
-      cartItems: true,
-    },
-  })
-
-  if (!cart) {
-    return notFound()
-  }
-
-  if (cart.cartItems.length > 0) {
-    await prisma.cartItems.deleteMany({
-      where: {
-        cartId: cart.id,
-      },
-    })
   }
 
   const { amount_total, payment_intent, customer_details, line_items } = session
@@ -134,6 +113,7 @@ const OrderPage = async ({
           </Link>
         </div>
       </div>
+      <ClientComponent />
     </div>
   )
 }
