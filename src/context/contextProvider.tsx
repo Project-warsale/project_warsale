@@ -28,14 +28,22 @@ const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<Cart | null>(null)
   const [cartOpen, setCartOpen] = useState<boolean>(false)
   const [total, setTotal] = useState<number>(0)
+  const [isClient, setIsClient] = useState<boolean>(false)
 
   useEffect(() => {
+    setIsClient(true)
+    if (!isClient) return
     const getCart = async () => {
-      const { data } = await axios.get('/api/cart')
-      setCart(data.cart)
+      if (!localStorage) return
+      const cartId = localStorage.getItem('cartId')
+      const { data } = await axios.get(`/api/cart?cartId=${cartId || 99999}`)
+      if (data.cart) {
+        setCart(data.cart)
+        localStorage.setItem('cartId', data.cart.id)
+      }
     }
     getCart()
-  }, [])
+  }, [isClient])
 
   useEffect(() => {
     const calculateTotal = () => {

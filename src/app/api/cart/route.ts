@@ -1,21 +1,14 @@
 import { NextResponse } from 'next/server'
 import prisma from '@/db/prisma'
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 
-export const GET = async () => {
+export const GET = async (req: Request) => {
   try {
-    const { getUser } = getKindeServerSession()
-    const user = await getUser()
-    if (!user) {
-      return NextResponse.json(
-        { message: 'unauthorized request' },
-        { status: 200 }
-      )
-    }
+    const { searchParams } = new URL(req.url)
+    const cartId = Number(searchParams.get('cartId'))
 
     const cartExists = await prisma.cart.findUnique({
       where: {
-        userId: user.id,
+        id: cartId,
       },
       include: {
         cartItems: {
@@ -30,9 +23,6 @@ export const GET = async () => {
       return NextResponse.json({ cart: cartExists }, { status: 200 })
     } else {
       const cart = await prisma.cart.create({
-        data: {
-          userId: user.id,
-        },
         include: {
           cartItems: {
             include: {
@@ -54,16 +44,6 @@ export const GET = async () => {
 
 export const POST = async (req: Request) => {
   try {
-    const { getUser } = getKindeServerSession()
-    const user = await getUser()
-
-    if (!user) {
-      return NextResponse.json(
-        { message: 'Unauthorized request' },
-        { status: 401 }
-      )
-    }
-
     const body = await req.json()
 
     const { productId, quantity, cartId } = body
@@ -98,16 +78,6 @@ export const POST = async (req: Request) => {
 export const PUT = async (req: Request) => {
   try {
     const body = await req.json()
-
-    const { getUser } = getKindeServerSession()
-    const user = await getUser()
-
-    if (!user) {
-      return NextResponse.json(
-        { message: 'Unauthorized request' },
-        { status: 401 }
-      )
-    }
 
     const { newQty, id } = body
 

@@ -121,7 +121,10 @@ const Cart = () => {
                   const response = await clearCart(cart.id)
 
                   if (response.status) {
-                    setCart(null)
+                    setCart((prev) => ({
+                      ...prev!,
+                      cartItems: [],
+                    }))
                     toast('Cart has been cleared.')
                   }
                 }}
