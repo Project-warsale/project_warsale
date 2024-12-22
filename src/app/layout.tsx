@@ -5,8 +5,10 @@ import Header from '@/components/shared/header'
 import Footer from '@/components/shared/footer'
 import ContextProvider from '@/context/contextProvider'
 import { Toaster } from 'sonner'
+import axios from 'axios'
 
 const recursive = Recursive({ subsets: ['latin'] })
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_URL!),
