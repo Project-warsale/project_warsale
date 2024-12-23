@@ -9,10 +9,7 @@ export const service = [
   { href: '/payment-options', label: 'Payment options' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
   { href: '/terms-policy', label: 'General terms and conditions' },
-  { href: '/warranty', label: 'Warranty' },
-  { href: '/cookies-policy', label: 'Cookies Policy' },
   { href: '/returns-policy', label: 'Return Policy' },
-  { href: '/forum', label: 'Forum' },
   { href: '/contact', label: 'Contact' },
 ]
 export const Producten = [
@@ -90,12 +87,6 @@ export const pages = [
     href: '/contact',
   },
   {
-    title: 'Cookies Policy',
-    description:
-      'Learn about how we use cookies on our website and your options.',
-    href: '/cookies-policy',
-  },
-  {
     title: 'Customer Services',
     description:
       'Access customer service for inquiries, assistance, and support.',
@@ -106,12 +97,6 @@ export const pages = [
     description:
       'Explore the various delivery options available for your orders.',
     href: '/delivery-options',
-  },
-  {
-    title: 'Forum',
-    description:
-      'Join discussions and connect with our community in the forum.',
-    href: '/forum',
   },
   {
     title: 'Privacy Policy',
@@ -133,10 +118,5 @@ export const pages = [
     title: 'Terms Policy',
     description: 'Read the terms and conditions that apply to our services.',
     href: '/terms-policy',
-  },
-  {
-    title: 'Warranty',
-    description: 'Find details about the warranty coverage for your purchases.',
-    href: '/warranty',
   },
 ]

@@ -1,84 +1,177 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Delivery options',
+  title: 'Verzendbeleid Safekit.nl',
   openGraph: {
-    title: 'Delivery options',
-    description: 'Delivery options we offer.',
+    title: 'Verzendbeleid Safekit.nl',
+    description: 'Bekijk ons verzendbeleid en leveringsinformatie.',
   },
 }
 
-const DeliveryCollection: React.FC = () => {
+const DeliveryPolicy: React.FC = () => {
   return (
     <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
-      <h1 className='text-3xl font-bold mb-6'>Bezorgen en Afhalen</h1>
+      <h1 className='text-3xl font-bold mb-6'>Verzendbeleid van Safekit.nl</h1>
+
+      <section className='mb-8'>
+        <h2 className='text-2xl font-semibold mb-4'>Leveringstijden</h2>
+        <p className='text-lg leading-relaxed'>
+          Door de huidige extreem hoge vraag kunnen levertijden oplopen tot 2
+          weken of langer. Wij doen ons uiterste best om alle bestellingen zo
+          snel mogelijk te verwerken en te verzenden, maar vragen uw begrip voor
+          eventuele vertragingen. Bestellingen worden verwerkt op volgorde van
+          binnenkomst. In sommige gevallen kan het voorkomen dat een bestelling
+          dezelfde werkdag nog wordt verzonden.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          Levertijden zijn indicatief; Safekit.nl accepteert geen
+          aansprakelijkheid voor vertragingen buiten onze controle.
+        </p>
+      </section>
+
+      <section className='mb-8'>
+        <h2 className='text-2xl font-semibold mb-4'>Annuleringen</h2>
+        <p className='text-lg leading-relaxed'>
+          <strong>Binnen 1 werkdag:</strong> Bestellingen kunnen alleen binnen 1
+          werkdag na plaatsing worden geannuleerd, mits deze nog niet zijn
+          verzonden.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          <strong>Na verzending:</strong> Zodra een bestelling is verzonden, is
+          annulering niet meer mogelijk. Houd er rekening mee dat bestellingen
+          soms op dezelfde dag al kunnen worden verzonden.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          <strong>Annuleren na 1 werkdag:</strong> Annuleringen buiten deze
+          termijn zijn alleen mogelijk indien de bestelling nog niet is
+          verzonden. Aanvragen kunnen worden ingediend via support@safekit.nl.
+          Terugbetalingen worden verwerkt binnen 14 dagen.
+        </p>
+      </section>
 
       <section className='mb-8'>
         <h2 className='text-2xl font-semibold mb-4'>
-          Gratis bezorging vanaf € 75
+          Bestellen op eigen risico
         </h2>
         <p className='text-lg leading-relaxed'>
-          Bestellingen vanaf € 75 leveren wij <strong>GRATIS</strong> af bij u
-          thuis of op uw werk met PostNL of GLS. Bij kleinere bestellingen kost
-          het verzenden € 9,95. Bent u niet thuis? Dan wordt het pakketje op
-          maandag t/m zaterdag afgeleverd bij uw buren. Wilt u dit niet? Neem
-          contact op met de klantenservice om een afspraak te maken om uw pakket
-          op te halen bij onze fulfilment partner in Soest.
-        </p>
-      </section>
-
-      <section className='mb-8'>
-        <h2 className='text-2xl font-semibold mb-4'>Levertijd</h2>
-        <p className='text-lg leading-relaxed'>
-          Voor 21:00 uur besteld? Dan heeft u het de volgende werkdag in huis,
-          tenzij anders aangegeven op de productpagina. Voor bestellingen in het
-          weekend of met een langere levertijd geldt: zie de informatie op onze
-          website.
+          Door een bestelling te plaatsen, accepteert u dat langere levertijden
+          mogelijk zijn. Wij bieden geen compensatie voor vertragingen
+          veroorzaakt door hoge vraag of andere onvoorziene omstandigheden
+          (zoals overmacht, stakingen, of pandemieën). Controleer vóór het
+          plaatsen van een bestelling of de verwachte levertijd voor u
+          acceptabel is.
         </p>
       </section>
 
       <section className='mb-8'>
         <h2 className='text-2xl font-semibold mb-4'>
-          Anoniem en discreet thuis bezorgd
+          Internationale verzending
         </h2>
         <p className='text-lg leading-relaxed'>
-          Wij bieden discrete verpakkingen aan. Wilt u anonieme levering? Neem
-          contact op met de klantenservice om dit in orde te maken.
+          Niet al onze producten worden vanuit Nederland verzonden. Sommige
+          producten worden direct vanuit andere landen naar de klant verzonden.
+          Dit kan invloed hebben op de levertijd, afhankelijk van de locatie van
+          het verzendcentrum.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          <strong>Douanekosten:</strong> Eventuele invoerrechten, btw of andere
+          kosten zijn voor rekening van de klant.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          <strong>Correcte gegevens:</strong> De klant is verantwoordelijk voor
+          het verstrekken van correcte adresgegevens. Vertragingen door foutieve
+          gegevens zijn niet de verantwoordelijkheid van Safekit.nl.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          <strong>Annuleren bij internationale verzending:</strong> Annuleren is
+          niet mogelijk zodra het product is verzonden vanuit een internationaal
+          verzendcentrum.
+        </p>
+      </section>
+
+      <section className='mb-8'>
+        <h2 className='text-2xl font-semibold mb-4'>Gratis Verzending</h2>
+        <p className='text-lg leading-relaxed'>
+          Voor alle bestellingen op Safekit.nl bieden wij gratis verzending
+          binnen Nederland.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          Gratis verzending is zonder Track & Trace.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          Gratis verzending is standaard en niet verzekerd. Het risico op
+          verlies of schade na verzending ligt bij de klant. De levertijd kan
+          langer zijn vergeleken met de prioriteitsverzendoptie.
         </p>
       </section>
 
       <section className='mb-8'>
         <h2 className='text-2xl font-semibold mb-4'>
-          Binnen 4 uur uw bestelling ophalen
+          Betaalde Verzending (Prioriteitsverzending)
         </h2>
         <p className='text-lg leading-relaxed'>
-          Kies bij het afrekenen voor{' '}
-          <strong>Ophalen op afspraak bij magazijn</strong>. Ophalen kost €
-          7,95. Neem contact op met onze klantenservice voor een afspraak. Het
-          magazijn is geopend van maandag t/m vrijdag van 10:00 tot 17:00 uur.
+          Wij bieden een optionele betaalde verzendmethode van €9,95 (prijs kan
+          variëren).
         </p>
         <p className='text-lg leading-relaxed'>
-          Adres: Industrieweg 37C, 3762EH, Soest.
+          Bij prioriteitsverzending wordt uw bestelling sneller verwerkt en
+          verzonden dan bij de gratis verzendoptie.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          <strong>Verzekering:</strong> Indien uw pakket zoekraakt tijdens de
+          verzending, betalen wij het volledige aankoopbedrag terug.
+        </p>
+        <p className='text-lg leading-relaxed'>
+          Let op: Prioriteitsverzending biedt snellere verwerking, maar dit
+          betekent niet altijd dat de vervoerder sneller levert.
         </p>
       </section>
 
       <section className='mb-8'>
-        <h2 className='text-2xl font-semibold mb-4'>Verzending</h2>
+        <h2 className='text-2xl font-semibold mb-4'>Bestellingen Onder €20</h2>
         <p className='text-lg leading-relaxed'>
-          Zodra uw bestelling is verzonden, ontvangt u een e-mail met een track
-          & trace-code om uw pakket te volgen.
+          Bestellingen onder de €20,- kunnen door ons worden geannuleerd indien
+          noodzakelijk. Klanten worden hierover geïnformeerd en ontvangen een
+          terugbetaling binnen 14 dagen.
+        </p>
+      </section>
+
+      <section className='mb-8'>
+        <h2 className='text-2xl font-semibold mb-4'>Belangrijke Opmerking</h2>
+        <p className='text-lg leading-relaxed'>
+          Wij doen ons best om de verwachte levertermijnen te halen, maar houd
+          er rekening mee dat deze indicatief zijn. Onvoorziene omstandigheden
+          kunnen leiden tot verdere vertragingen. Safekit.nl is niet
+          aansprakelijk voor eventuele gevolgschade door vertraagde leveringen.
         </p>
       </section>
 
       <section>
-        <h2 className='text-2xl font-semibold mb-4'>Deellevering</h2>
+        <h2 className='text-2xl font-semibold mb-4'>Contact</h2>
         <p className='text-lg leading-relaxed'>
-          Soms versturen wij een deellevering, zodat u beschikbare producten
-          sneller ontvangt. Details worden vermeld in de verzendmail.
+          Voor vragen over uw bestelling of ons verzendbeleid kunt u contact
+          opnemen met onze klantenservice:
+        </p>
+        <p className='text-lg leading-relaxed'>
+          E-mail:{' '}
+          <a href='mailto:support@safekit.nl' className='text-blue-600'>
+            support@safekit.nl
+          </a>
+        </p>
+        <p className='text-lg leading-relaxed'>
+          Website:{' '}
+          <a
+            href='https://safekit.nl'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-blue-600'
+          >
+            https://safekit.nl
+          </a>
         </p>
       </section>
     </div>
   )
 }
 
-export default DeliveryCollection
+export default DeliveryPolicy
