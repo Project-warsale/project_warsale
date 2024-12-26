@@ -5,10 +5,10 @@ import { CgFileDocument } from 'react-icons/cg'
 import { MdOutlinePrivacyTip } from 'react-icons/md'
 
 export const service = [
-  { href: '/delivery-options', label: 'Delivery options' },
+  { href: '/delivery-options', label: 'Verzendbeleid' },
   { href: '/payment-options', label: 'Payment options' },
-  { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/terms-policy', label: 'General terms and conditions' },
+  { href: '/privacy-policy', label: 'Privacybeleid' },
+  { href: '/terms-policy', label: 'Algemene Voorwaarden' },
   { href: '/returns-policy', label: 'Return Policy' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -30,7 +30,7 @@ export const customerServices = [
   },
   {
     icon: TbBus,
-    title: 'Delivery and collection',
+    title: 'Verzendbeleid',
     description:
       'Here you will find everything about our shipping and colletion options.',
     href: '/delivery-options',
@@ -62,13 +62,13 @@ export const customerServices = [
   },
   {
     icon: CgFileDocument,
-    title: 'Terms and Conditions',
+    title: 'Algemene Voorwaarden',
     description: 'Here you will find our general terms and conditions.',
     href: '/terms-policy',
   },
   {
     icon: MdOutlinePrivacyTip,
-    title: 'Privacy',
+    title: 'Privacybeleid',
     description: 'We respect your data. Read more here.',
     href: 'privacy-policy',
   },
@@ -93,13 +93,13 @@ export const pages = [
     href: '/customer-services',
   },
   {
-    title: 'Delivery Options',
+    title: 'Verzendbeleid',
     description:
       'Explore the various delivery options available for your orders.',
     href: '/delivery-options',
   },
   {
-    title: 'Privacy Policy',
+    title: 'Privacybeleid',
     description:
       'Understand how we handle and protect your personal information.',
     href: '/privacy-policy',
@@ -115,7 +115,7 @@ export const pages = [
     href: '/returns-policy',
   },
   {
-    title: 'Terms Policy',
+    title: 'Algemene Voorwaarden',
     description: 'Read the terms and conditions that apply to our services.',
     href: '/terms-policy',
   },

@@ -21,20 +21,6 @@ const Footer = () => {
         <div className='container'>
           <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-4'>
             <FooterColumn title='Service' items={service} />
-            <div className='footer-col'>
-              <h2 className='text-lg font-semibold mb-2'>Safekit</h2>
-              <div className='footer-col-content'>
-                <span>Avenue Corpus Den Hoorn 108</span>
-                <br />
-                <span>9728 JR Groningen</span>
-              </div>
-              <span className='text-22px text-white-800 cmsb96-mb-4 cmsb96-font-bold'>
-                +31 85 016 3024
-              </span>
-            </div>
-            <div className='footer-col'>
-              <div className='newsletter w-full'></div>
-            </div>
           </div>
         </div>
       </div>
@@ -115,9 +101,7 @@ const FooterBottom = () => (
       <div className='text-sm w-full pb-6'>
         Customer rating <strong>9/10 - 1,946</strong> reviews
       </div>
-      <div className='text-sm w-full pt-2 mb-4'>
-        © 2014 - 2024 Allprepare. All prices are inclusive of VAT.
-      </div>
+      <div className='text-sm w-full pt-2 mb-4'>Safekit ©2024 </div>
     </div>
   </div>
 )
