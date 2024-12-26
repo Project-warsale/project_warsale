@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { Product as ProductType, Specifications } from '@prisma/client'
 import prisma from '@/db/prisma'
 import { validateProductsArray } from '../../validators/products'
+import { authMiddleware } from '../../middleware'
 
 interface Product {
   product: ProductType
@@ -10,6 +11,10 @@ interface Product {
 
 export const POST = async (req: Request) => {
   try {
+    const matches = await authMiddleware(req)
+    if (!matches) {
+      return NextResponse.json({ message: 'Access denied' }, { status: 403 })
+    }
     const body = JSON.parse(await req.text())
 
     const { products }: { products: Product[] } = body

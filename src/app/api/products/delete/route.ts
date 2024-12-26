@@ -1,7 +1,12 @@
 import prisma from '@/db/prisma'
 import { NextResponse } from 'next/server'
+import { authMiddleware } from '../../middleware'
 
 export const DELETE = async (req: Request) => {
+  const matches = await authMiddleware(req)
+  if (!matches) {
+    return NextResponse.json({ message: 'Access denied' }, { status: 403 })
+  }
   try {
     const { searchParams } = new URL(req.url)
     const id = searchParams.get('id')
