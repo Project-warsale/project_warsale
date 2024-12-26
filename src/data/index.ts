@@ -1,23 +1,15 @@
 import { PiHeadsetBold } from 'react-icons/pi'
 import { TbBus } from 'react-icons/tb'
-import { FaNewspaper, FaRegCreditCard } from 'react-icons/fa6'
+import { FaNewspaper } from 'react-icons/fa6'
 import { CgFileDocument } from 'react-icons/cg'
 import { MdOutlinePrivacyTip } from 'react-icons/md'
 
 export const service = [
-  { href: '/delivery-options', label: 'Verzendbeleid' },
-  { href: '/payment-options', label: 'Payment options' },
-  { href: '/privacy-policy', label: 'Privacybeleid' },
   { href: '/terms-policy', label: 'Algemene Voorwaarden' },
-  { href: '/returns-policy', label: 'Return Policy' },
+  { href: '/privacy-policy', label: 'Privacybeleid' },
+  { href: '/delivery-options', label: 'Verzendbeleid' },
+  { href: '/returns-policy', label: 'Retourbeleid' },
   { href: '/contact', label: 'Contact' },
-]
-export const Producten = [
-  { href: '/noodpakket', label: 'Noodpakket' },
-  { href: '/noodrantsoen', label: 'Noodrantsoen' },
-  { href: '/waterfilter', label: 'Waterfilter' },
-  { href: '/solar-generator', label: 'Solar Generator' },
-  { href: '/noodradio', label: 'Noodradio' },
 ]
 
 export const customerServices = [
@@ -36,12 +28,6 @@ export const customerServices = [
     href: '/delivery-options',
   },
   {
-    icon: FaRegCreditCard,
-    title: 'Payment options',
-    description: 'Here you will find all information about payment options.',
-    href: '/payment-options',
-  },
-  {
     icon: CgFileDocument,
     title: 'About us',
     description:
@@ -50,7 +36,7 @@ export const customerServices = [
   },
   {
     icon: FaNewspaper,
-    title: 'Returns',
+    title: 'Retourbeleid',
     description: 'Still not completely satisfied? Read here about returns.',
     href: '/returns-policy',
   },
@@ -70,7 +56,7 @@ export const customerServices = [
     icon: MdOutlinePrivacyTip,
     title: 'Privacybeleid',
     description: 'We respect your data. Read more here.',
-    href: 'privacy-policy',
+    href: '/privacy-policy',
   },
   {
     icon: CgFileDocument,
@@ -110,7 +96,7 @@ export const pages = [
     href: '/products',
   },
   {
-    title: 'Returns Policy',
+    title: 'Retourbeleid',
     description: 'Review our policy for returning items and obtaining refunds.',
     href: '/returns-policy',
   },

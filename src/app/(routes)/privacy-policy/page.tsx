@@ -1,243 +1,193 @@
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Retourbeleid en terugbetalingen',
-  openGraph: {
-    title: 'Retourbeleid en terugbetalingen',
-    description: 'Informatie over ons retourbeleid en terugbetalingen.',
-  },
-}
-
-const ReturnPolicy: React.FC = () => {
+const PrivacyPolicy = () => {
   return (
-    <div className='mx-auto px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
-      <h1 className='text-2xl font-semibold text-[#333] mb-6'>
-        Retourbeleid en terugbetalingen Safekit.nl
+    <div className='p-8 text-gray-800 px-5 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-10'>
+      {/* Header Section */}
+      <h1 className='text-4xl font-extrabold mb-6'>
+        Privacybeleid van Safekit.nl
       </h1>
+      <p className='mb-6'>
+        Safekit.nl, gevestigd aan 3146AD, Maassluis, is verantwoordelijk voor de
+        verwerking van persoonsgegevens zoals beschreven in dit privacybeleid.
+        Voor contact kunt u ons bereiken via{' '}
+        <a
+          href='mailto:info@safekit.nl'
+          className='text-blue-500 hover:underline'
+        >
+          info@safekit.nl
+        </a>
+        .
+      </p>
 
+      {/* Personal Data Section */}
       <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>Productretour</h2>
-        <p className='text-sm text-[#666]'>
-          U heeft de mogelijkheid om uw aankopen bij Safekit.nl binnen 14 dagen
-          na ontvangst te registreren voor retourzending. Na deze registratie
-          heeft u nog eens 14 dagen om de producten daadwerkelijk te
-          retourneren.
-          <br />
-          <br />
-          <strong>Let op:</strong> Etenswaren en dranken vallen niet onder het
-          retourrecht en kunnen niet worden geretourneerd, in overeenstemming
-          met de wettelijke uitzonderingen voor hygiëne en voedselveiligheid.
+        <h2 className='text-2xl font-extrabold mb-4'>
+          Persoonsgegevens die wij verwerken
+        </h2>
+        <p className='mb-4'>
+          Safekit.nl verzamelt uw persoonsgegevens wanneer u gebruikmaakt van
+          onze diensten of deze zelf aan ons verstrekt. Hier volgt een overzicht
+          van de gegevens die wij verwerken:
         </p>
-      </section>
-
-      <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>Retourprocedure</h2>
-        <div className='text-sm text-[#666]'>
-          Indien u een artikel wenst terug te sturen, verzoeken wij u binnen 14
-          dagen na ontvangst contact op te nemen via{' '}
-          <a href='mailto:support@safekit.nl' className='text-blue-600'>
-            support@safekit.nl
-          </a>
-          . Vermeld in uw e-mail:
-        </div>
-        <ul className='list-disc pl-5 text-sm text-[#666]'>
-          <li>Uw volledige adres</li>
-          <li>Het bestelnummer</li>
-          <li>De items die u wilt retourneren</li>
+        <ul className='list-disc ml-6'>
+          <li>Voor- en achternaam</li>
+          <li>Geslacht</li>
+          <li>Adresgegevens</li>
+          <li>Telefoonnummer</li>
+          <li>E-mailadres</li>
+          <li>IP-adres</li>
+          <li>Bankrekeningnummer</li>
         </ul>
-        <div className='text-sm text-[#666]'>
-          Na uw melding ontvangt u instructies voor de retourzending. U heeft
-          vervolgens 14 dagen om de producten te retourneren.
-          <br />
-          <br />
-          <strong>Kosten retourzending:</strong> De retourkosten zijn voor eigen
-          rekening.
-          <br />
-          <strong>Verantwoordelijkheid:</strong> U blijft verantwoordelijk voor
-          de producten totdat deze bij ons zijn afgeleverd. Wij raden aan een
-          verzendcode te bewaren als bewijs van verzending.
-        </div>
       </section>
 
+      {/* Minors Section */}
       <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>Vermindering van waarde</h2>
-        <p className='text-sm text-[#666]'>
-          Indien een geretourneerd product of de verpakking beschadigd is door
-          gebruik dat verder gaat dan noodzakelijk om het artikel te testen,
-          behouden wij ons het recht voor om waardevermindering in rekening te
-          brengen.
-          <br />
-          <br />
-          <strong>Tip:</strong> Behandel het product zorgvuldig en gebruik
-          beschermend verpakkingsmateriaal bij het terugsturen.
+        <h2 className='text-2xl font-extrabold mb-4'>
+          Bescherming van minderjarigen
+        </h2>
+        <p className='mb-4'>
+          Onze website heeft niet de intentie gegevens te verzamelen van
+          bezoekers die jonger zijn dan 16 jaar, tenzij ze toestemming hebben
+          van ouders of voogd. Ouders worden aangemoedigd actief betrokken te
+          zijn bij de online activiteiten van hun kinderen om zo verzameling van
+          gegevens zonder ouderlijke toestemming te voorkomen.
         </p>
-      </section>
-
-      <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>Garantie</h2>
-        <p className='text-sm text-[#666]'>
-          De meeste producten vallen onder de wettelijke garantie. Dit betekent
-          dat u recht heeft op een deugdelijk product dat voldoet aan redelijke
-          verwachtingen.
-          <br />
-          <br />
-          <strong>Elektronische producten:</strong> hebben een garantieperiode
-          van 1 jaar, mits het product normaal is gebruikt.
-          <br />
-          <br />
-          <strong>Let op:</strong> Niet alle producten hebben een
-          garantieperiode. Raadpleeg hiervoor de specifieke productinformatie.
-          <br />
-          Heeft u een defect product ontvangen? Neem dan binnen 5 werkdagen
-          contact met ons op via{' '}
-          <a href='mailto:support@safekit.nl' className='text-blue-600'>
-            support@safekit.nl
+        <p>
+          Als u meent dat wij zonder die toestemming persoonlijke gegevens
+          hebben verzameld over een minderjarige, neem dan contact met ons op
+          via{' '}
+          <a
+            href='mailto:info@safekit.nl'
+            className='text-blue-500 hover:underline'
+          >
+            info@safekit.nl
           </a>
-          , zodat wij samen naar een oplossing kunnen zoeken.
+          , zodat we deze informatie kunnen verwijderen.
         </p>
       </section>
 
+      {/* Purposes Section */}
       <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>
-          Geen retour voor digitale producten
+        <h2 className='text-2xl font-extrabold mb-4'>
+          Doelen van gegevensverwerking
         </h2>
-        <p className='text-sm text-[#666]'>
-          E-books en andere digitale producten die via Safekit.nl zijn
-          aangeschaft, kunnen niet worden geretourneerd. Alle aankopen van
-          digitale producten zijn definitief.
+        <p className='mb-4'>
+          Safekit.nl verwerkt persoonsgegevens voor de volgende doeleinden:
         </p>
-      </section>
-
-      <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>
-          Stappen voor retourzending
-        </h2>
-        <p className='text-sm text-[#666]'>
-          <strong>Volg deze stappen:</strong>
-        </p>
-        <ul className='list-disc pl-5 text-sm text-[#666]'>
+        <ul className='list-disc ml-6'>
+          <li>Het afhandelen van uw betalingen.</li>
           <li>
-            Neem binnen 14 dagen na ontvangst contact met ons op via{' '}
-            <a href='mailto:support@safekit.nl' className='text-blue-600'>
-              support@safekit.nl
-            </a>
-            .
+            Contact met u opnemen indien nodig om onze dienstverlening te kunnen
+            uitvoeren.
+          </li>
+          <li>Het mogelijk maken om een account aan te maken.</li>
+          <li>Het leveren van goederen en diensten aan u.</li>
+        </ul>
+      </section>
+
+      {/* Data Sharing Section */}
+      <section className='mb-8'>
+        <h2 className='text-2xl font-extrabold mb-4'>
+          Delen van persoonsgegevens met derden
+        </h2>
+        <p className='mb-4'>
+          Safekit.nl deelt uw gegevens met derden wanneer dit noodzakelijk is
+          voor de uitvoering van de overeenkomst of om te voldoen aan wettelijke
+          verplichtingen. Met partijen die uw gegevens verwerken namens ons,
+          sluiten we een verwerkersovereenkomst om eenzelfde niveau van
+          beveiliging en vertrouwelijkheid van uw gegevens te garanderen.
+        </p>
+        <p className='mb-4'>
+          Hieronder enkele voorbeelden van derden met wie wij samenwerken:
+        </p>
+        <ul className='list-disc ml-6'>
+          <li>MyParcel: voor het aanmaken van verzendlabels.</li>
+          <li>
+            WebwinkelKeur: voor het verzenden van uitnodigingen voor reviews.
           </li>
           <li>
-            Verpak de producten zorgvuldig in de originele verpakking of een
-            gelijkwaardige beschermende verpakking.
+            ShopsUnited: voor het aanmaken van verzendlabels via andere
+            vervoerders.
           </li>
-          <li>Stuur het pakket naar het retouradres dat wij u verstrekken.</li>
-        </ul>
-        <p className='text-sm text-[#666]'>
-          Na ontvangst van de retourzending storten wij het aankoopbedrag,
-          exclusief de kosten voor de retourzending, binnen 10 werkdagen terug
-          op uw rekening.
-        </p>
-      </section>
-
-      <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>Terugbetaling</h2>
-        <div className='text-sm text-[#666]'>
-          <strong>Uitbetaling voor retourzendingen:</strong> Wij verwerken uw
-          terugbetaling binnen 10 werkdagen na ontvangst van de retourzending.
-          Houd er rekening mee dat:
-          <br />
-          <br />
-          <ul className='list-disc pl-5'>
-            <li>Verzendkosten voor retourzendingen niet worden vergoed.</li>
-            <li>
-              U verantwoordelijk blijft voor de staat van het geretourneerde
-              product tijdens het transport.
-            </li>
-          </ul>
-          <br />
-          <strong>Gedeeltelijke terugbetaling:</strong> Als geretourneerde
-          producten beschadigd zijn door gebruik of onzorgvuldig verpakken,
-          wordt de waardevermindering in mindering gebracht op het terug te
-          betalen bedrag.
-        </div>
-      </section>
-
-      <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>
-          Belangrijk: Uitzonderingen op het retourbeleid
-        </h2>
-        <div className='text-sm text-[#666]'>
-          De volgende producten kunnen niet worden geretourneerd:
-        </div>
-        <ul className='list-disc pl-5 text-sm text-[#666]'>
-          <li>Etenswaren en dranken (vanwege hygiëne en voedselveiligheid).</li>
           <li>
-            Digitale producten zoals e-books en downloads (vanwege de aard van
-            het product).
+            Meta, Google en TikTok Pixels: voor reclame- en analysetechnologie.
           </li>
         </ul>
       </section>
 
+      {/* Cookies Section */}
       <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>Retouradres</h2>
-        <div className='text-sm text-[#666]'>
-          Het retouradres wordt aan u verstrekt nadat u uw retour heeft
-          aangemeld via{' '}
-          <a href='mailto:support@safekit.nl' className='text-blue-600'>
-            support@safekit.nl
-          </a>
-          . Zorg ervoor dat u het adres correct gebruikt om vertragingen of
-          problemen met de retourzending te voorkomen.
-        </div>
-      </section>
-
-      <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>
-          Gesealde noodpakketten – uitzondering retourrecht
+        <h2 className='text-2xl font-extrabold mb-4'>
+          Cookies en vergelijkbare technieken
         </h2>
-        <div className='text-sm text-[#666]'>
-          Onze noodpakketten worden geleverd in een gesealde verpakking, zoals
-          een voedselveilige emmer. Deze emmers zijn speciaal ontworpen om
-          voedsel op te slaan en voldoen aan hoge hygiëne- en veiligheidsnormen.
-          Om deze normen te waarborgen, kunnen noodpakketten waarvan de seal is
-          verbroken, niet worden geretourneerd.
-          <br />
-          <br />
-          Volgens artikel 6:230p lid f sub 3 van het Burgerlijk Wetboek is het
-          herroepingsrecht uitgesloten voor producten die om redenen van
-          gezondheidsbescherming of hygiëne niet geschikt zijn om te worden
-          geretourneerd indien de verzegeling na levering is verbroken.
-          <br />
-          <br />
-          Zodra de seal van een noodpakket is geopend, kunnen wij niet meer
-          garanderen dat het product geschikt blijft voor hergebruik of veilige
-          voedselopslag. Hierdoor vervalt het recht op retourneren wanneer de
-          verpakking is geopend.
-          <br />
-          <br />
-          Wij adviseren klanten om de seal alleen te verbreken als u zeker weet
-          dat u het product wilt gebruiken. Mocht u vragen hebben over een
-          product, neem dan gerust contact met ons op vóór opening.
-        </div>
+        <p className='mb-4'>
+          Wij gebruiken technische, functionele en analytische cookies die geen
+          inbreuk maken op uw privacy. Cookies zijn kleine tekstbestanden die
+          bij uw eerste bezoek aan onze website worden opgeslagen op uw
+          apparaat. Ze zijn noodzakelijk voor de technische werking van de
+          website en uw gebruiksgemak.
+        </p>
+        <p>
+          U kunt zich afmelden voor cookies door uw internetbrowser zo in te
+          stellen dat deze geen cookies meer opslaat. Ook kunt u alle eerder
+          opgeslagen informatie via de browserinstellingen verwijderen.
+        </p>
       </section>
 
+      {/* Rights Section */}
       <section className='mb-8'>
-        <h2 className='text-xl font-semibold mb-4'>Contact</h2>
-        <div className='text-sm text-[#666]'>
-          Voor vragen over ons retourbeleid of uw retourzending kunt u contact
-          opnemen via:
-          <br />
-          <br />
-          E-mail:{' '}
-          <a href='mailto:support@safekit.nl' className='text-blue-600'>
-            support@safekit.nl
+        <h2 className='text-2xl font-extrabold mb-4'>
+          Rechten omtrent uw gegevens
+        </h2>
+        <p className='mb-4'>
+          U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of
+          te verwijderen. U kunt ook bezwaar maken tegen de verwerking van uw
+          gegevens door Safekit.nl of verzoeken om gegevensoverdraagbaarheid.
+          Een verzoek kunt u indienen via{' '}
+          <a
+            href='mailto:info@safekit.nl'
+            className='text-blue-500 hover:underline'
+          >
+            info@safekit.nl
           </a>
-          <br />
-          Website:{' '}
-          <a href='https://safekit.nl' className='text-blue-600'>
-            https://safekit.nl
+          .
+        </p>
+        <p>
+          Ter bescherming van uw privacy vragen wij u om een kopie van uw
+          identiteitsbewijs mee te sturen, waarbij u uw pasfoto en andere
+          gevoelige informatie onleesbaar maakt.
+        </p>
+      </section>
+
+      {/* Security Section */}
+      <section>
+        <h2 className='text-2xl font-extrabold mb-4'>
+          Beveiliging van persoonsgegevens
+        </h2>
+        <p className='mb-4'>
+          Safekit.nl neemt de beveiliging van uw gegevens serieus en treft
+          passende maatregelen om misbruik, verlies, onbevoegde toegang, en
+          andere ongewenste handelingen te voorkomen. Dit omvat het gebruik van
+          beveiligingssoftware en een beveiligde internetverbinding voor
+          dataoverdracht.
+        </p>
+        <p>
+          Bij aanwijzingen van misbruik kunt u contact opnemen via{' '}
+          <a
+            href='mailto:info@safekit.nl'
+            className='text-blue-500 hover:underline'
+          >
+            info@safekit.nl
           </a>
-        </div>
+          .
+        </p>
+        <p>
+          Voor klachten over onze gegevensverwerking kunt u zich wenden tot de
+          nationale toezichthouder, de Autoriteit Persoonsgegevens, via hun
+          website.
+        </p>
       </section>
     </div>
   )
 }
 
-export default ReturnPolicy
+export default PrivacyPolicy
