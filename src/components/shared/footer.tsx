@@ -16,13 +16,10 @@ const Footer = () => {
     return <></>
   }
   return (
-    <footer className='w-full flex flex-col items-center bg-[#FBFAF8] pt-6 mt-10'>
-      <div className='footer-content'>
-        <div className='container'>
-          <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-4'>
-            <FooterColumn title='Service' items={service} />
-          </div>
-        </div>
+    <footer className='w-full flex flex-col gap-3 items-center bg-[#FBFAF8] pt-6 mt-10 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
+      <div className='w-full flex items-center justify-between'>
+        <Image src='/logo.png' alt='logo' width={100} height={100} />
+        <FooterColumn title='Service' items={service} />
       </div>
 
       <FooterBottom />
