@@ -30,7 +30,7 @@ const Cart = () => {
       {!cart || cart.cartItems.length === 0 ? (
         <div className='w-full flex flex-col items-center gap-5'>
           <div className='w-full flex items-center justify-between py-4 px-5 border-b'>
-            <h2 className='text-2xl font-bold'>Shopping cart</h2>
+            <h2 className='text-2xl font-bold'>Winkelwagen</h2>
             <button
               onClick={() => {
                 setCartOpen(false)
@@ -40,7 +40,7 @@ const Cart = () => {
             </button>
           </div>
           <MdOutlineRemoveShoppingCart className='text-[100px] text-[#dddcdc]' />
-          <p className='text-black/80'>Your cart is currently empty.</p>
+          <p className='text-black/80'>Uw winkelwagen is momenteel leeg.</p>
           <Link
             onClick={() => {
               setCartOpen(false)
@@ -48,13 +48,13 @@ const Cart = () => {
             href='/products'
             className='bg-theme text-white px-5 py-2 hover:bg-theme/80 transition-all duration-200 ease-linear'
           >
-            Return to shop
+            Terug naar de winkel
           </Link>
         </div>
       ) : (
         <div className='flex flex-col items-start gap-5 h-full'>
           <div className='w-full flex items-center justify-between py-4 px-5 border-b'>
-            <h2 className='text-2xl font-bold'>Shopping cart</h2>
+            <h2 className='text-2xl font-bold'>Winkelwagen</h2>
             <button
               onClick={() => {
                 setCartOpen(false)
@@ -81,11 +81,11 @@ const Cart = () => {
           </div>
           <div className='w-full flex flex-col items-start gap-3'>
             <div className='w-full flex items-center justify-between px-5 border-b py-3'>
-              <h4 className='text-2xl font-semibold'>Subtotal :</h4>
+              <h4 className='text-2xl font-semibold'>Subtotaal :</h4>
               <h4>
                 {formatPrice(total + total * 0.21)}
-                <span className='text-sm text-gray-700'>
-                  (Includes {formatPrice(total * 0.21)} VAT)
+                <span className='text-[15px] text-gray-700'>
+                  (inclusief B.T.W. {formatPrice(total * 0.21)})
                 </span>
               </h4>
             </div>
@@ -109,10 +109,10 @@ const Cart = () => {
               >
                 {stripeLoading ? (
                   <span className='flex items-center gap-4 justify-center text-white group-hover:text-theme duration-300 transition-all ease-linear'>
-                    Processing <span className='loader scale-[40%]'></span>
+                    Verwerken <span className='loader scale-[40%]'></span>
                   </span>
                 ) : (
-                  'Checkout'
+                  'Uitchecken'
                 )}
               </button>
 
@@ -125,12 +125,12 @@ const Cart = () => {
                       ...prev!,
                       cartItems: [],
                     }))
-                    toast('Cart has been cleared.')
+                    toast('Winkelwagen is leeggemaakt.')
                   }
                 }}
                 className='w-full text-center py-3.5 text-theme hover:bg-theme bg-transparent transition-all border-theme border hover:text-white duration-200 ease-linear'
               >
-                Clear cart
+                Winkelwagen leegmaken
               </button>
             </div>
           </div>

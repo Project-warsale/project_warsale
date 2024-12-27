@@ -4,16 +4,13 @@ const AnnouncmentBar = () => {
       <div className='flex animate-scroll'>
         <div className='flex items-center px-1 gap-64'>
           <p className='text-[17px] w-max whitespace-nowrap'>
-            Plant 4 trees with every product purchase 🌳
+            30% korting wees snel hebben voor nood
           </p>
           <p className='text-[17px] w-max whitespace-nowrap'>
-            Free shipping on orders above €30 📨
+            Gratis verzending orders boven €30
           </p>
           <p className='text-[17px] w-max whitespace-nowrap'>
-            Last business card you will ever need! 🥇
-          </p>
-          <p className='text-[17px] w-max whitespace-nowrap'>
-            Make a lasting impact on your clients 🤝
+            Noodpakket wat je moet hebben voor nood
           </p>
         </div>
       </div>

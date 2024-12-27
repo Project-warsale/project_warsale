@@ -7,7 +7,7 @@ import { Specifications } from '@prisma/client'
 const ProductDescription = ({ description }: { description: string }) => {
   return (
     <div className='w-full flex flex-col items-center mt-5 gap-5'>
-      <h3 className='text-xl font-semibold'>Product Description</h3>
+      <h3 className='text-xl font-semibold'>Productomschrijving</h3>
       <p className='text-zinc-700'>{description}</p>
     </div>
   )
@@ -27,7 +27,7 @@ const ProductSpecifications = ({
       <div className='w-full flex flex-col items-start gap-3'>
         {brand && (
           <div className='w-1/2 flex items-center gap-10 border-b pb-2 border-black/50'>
-            <span>Brand: </span>
+            <span>Merk: </span>
             <span>{brand}</span>
           </div>
         )}
@@ -39,13 +39,13 @@ const ProductSpecifications = ({
         )}
         {size && (
           <div className='w-1/2 flex items-center gap-10 border-b pb-2 border-black/50'>
-            <span>Size: </span>
+            <span>Maat: </span>
             <span>{size}</span>
           </div>
         )}
         {color && (
           <div className='w-1/2 flex items-center gap-10 border-b pb-2 border-black/50'>
-            <span>Color: </span>
+            <span>Kleur: </span>
             <div
               className='w-[26px] h-[26px] rounded-[5px]'
               style={{
@@ -56,7 +56,7 @@ const ProductSpecifications = ({
         )}
         {weight && (
           <div className='w-1/2 flex items-center gap-10 border-b pb-2 border-black/50'>
-            <span>Weight: </span>
+            <span>: Gewicht</span>
             <span>{weight}</span>
           </div>
         )}
@@ -87,7 +87,7 @@ const ProductInformation = ({
             selectedInfo === 'information' && 'border-theme text-theme'
           )}
         >
-          Product information
+          Productinformatie
         </button>
         <button
           onClick={() => setSelectedInfo('specifications')}
@@ -96,7 +96,7 @@ const ProductInformation = ({
             selectedInfo === 'specifications' && 'border-theme text-theme'
           )}
         >
-          Specifications
+          Specificaties
         </button>
       </div>
       {selectedInfo === 'information' ? (

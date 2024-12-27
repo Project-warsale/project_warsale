@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className='w-full flex flex-col gap-3 items-center bg-[#FBFAF8] pt-6 mt-10 px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80'>
       <div className='w-full flex items-center justify-between'>
         <Image src='/logo.png' alt='logo' width={100} height={100} />
-        <FooterColumn title='Service' items={service} />
+        <FooterColumn title='Dienst' items={service} />
       </div>
 
       <FooterBottom />
@@ -96,9 +96,9 @@ const FooterBottom = () => (
         />
       </div>
       <div className='text-sm w-full pb-6'>
-        Customer rating <strong>9/10 - 1,946</strong> reviews
+        Klantbeoordeling <strong>9/10 - 1,946</strong> reviews
       </div>
-      <div className='text-sm w-full pt-2 mb-4'>Safekit ©2024 </div>
+      <div className='text-sm w-full pt-2 mb-4'>Safekit ©2024</div>
     </div>
   </div>
 )

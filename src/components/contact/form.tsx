@@ -25,7 +25,7 @@ const ContactForm = () => {
     >
       <div className='flex w-full flex-col items-start gap-1'>
         <label htmlFor='name' className='font-semibold text-[15px]'>
-          Name <span className='text-red-700'>*</span>
+          Naam <span className='text-red-700'>*</span>
         </label>
         <input
           id='name'
@@ -40,7 +40,7 @@ const ContactForm = () => {
       </div>
       <div className='flex w-full flex-col items-start gap-1'>
         <label htmlFor='email' className='font-semibold text-[15px]'>
-          Email <span className='text-red-700'>*</span>
+          E-mail <span className='text-red-700'>*</span>
         </label>
         <input
           id='email'
@@ -55,7 +55,7 @@ const ContactForm = () => {
       </div>
       <div className='flex w-full flex-col items-start gap-1'>
         <label htmlFor='phone' className='font-semibold text-[15px]'>
-          Phone number <span className='text-red-700'>*</span>
+          Telefoonnummer <span className='text-red-700'>*</span>
         </label>
         <input
           id='phone'
@@ -70,7 +70,7 @@ const ContactForm = () => {
       </div>
       <div className='flex w-full flex-col items-start gap-1'>
         <label htmlFor='question' className='font-semibold text-[15px]'>
-          What is your question?
+          Wat is uw vraag? <span className='text-red-700'>*</span>
         </label>
         <textarea
           value={question}
@@ -82,7 +82,7 @@ const ContactForm = () => {
         />
       </div>
       <button className='px-7 py-2.5 rounded-full bg-theme text-white shadow-lg shadow-theme/50 hover:bg-theme/80 hover:shadow-none transition-all duration-200 ease-linear'>
-        Send
+        Versturen
       </button>
     </form>
   )

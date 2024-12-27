@@ -99,7 +99,7 @@ const AddToCart = ({ product }: { product: Product }) => {
     <div className='rounded-xl p-4 flex flex-col items-start gap-3.5 border w-full'>
       <span className='flex items-center gap-2 text-[#657E16]'>
         <FaCheckCircle />
-        Delivery time: 5-7 working days
+        Levertijd: 5-7 werkdagen
       </span>
       <div className='flex items-center gap-5 max-lg:flex-col max-lg:items-start'>
         <div className='flex items-center h-[45px]'>
@@ -137,12 +137,12 @@ const AddToCart = ({ product }: { product: Product }) => {
         >
           {!loading ? (
             <div className='flex items-center'>
-              <span>In shopping cart</span>
+              <span>In winkelwagen</span>
               <FiShoppingCart className='text-xl' />
             </div>
           ) : (
             <div className='flex items-center gap-3'>
-              Loading <span className='loader scale-[35%]'></span>
+              Laden <span className='loader scale-[35%]'></span>
             </div>
           )}
         </button>
@@ -151,26 +151,24 @@ const AddToCart = ({ product }: { product: Product }) => {
       <div className='w-full flex flex-col items-start gap-5'>
         <div className='flex items-center gap-4'>
           <PiPackageLight className='text-xl' />
-          <span className='text-sm text-zinc-700'>Fast Delivery</span>
+          <span className='text-sm text-zinc-700'>Snelle levering</span>
         </div>
         <div className='flex items-center gap-4'>
           <TbBus className='text-xl' />
           <span className='text-sm text-zinc-700'>
-            Free returns within 14 days
+            Gratis retourneren binnen 14 dagen
           </span>
         </div>
         <div className='flex items-center gap-4'>
           <SlTrophy className='text-xl' />
           <span className='text-sm text-zinc-700 flex items-center gap-3'>
-            Customer rating <span className='font-bold'>9/10 - 1,946 </span>
+            Klantbeoordeling <span className='font-bold'>9/10 - 1,946 </span>
             reviews
           </span>
         </div>
         <div className='flex items-center gap-4'>
           <TbWallet className='text-xl' />
-          <span className='text-sm text-zinc-700'>
-            More than 10,000 customers
-          </span>
+          <span className='text-sm text-zinc-700'>Meer dan 10.000 klanten</span>
         </div>
       </div>
     </div>

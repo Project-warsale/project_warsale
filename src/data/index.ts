@@ -15,94 +15,78 @@ export const service = [
 export const customerServices = [
   {
     icon: PiHeadsetBold,
-    title: 'Contact Us',
+    title: 'Contact',
     description:
-      'We are here for you. On this page you will find how to reach us.',
+      'Wij zijn er voor u. Op deze pagina vindt u hoe u ons kunt bereiken.',
     href: '/contact',
   },
   {
     icon: TbBus,
     title: 'Verzendbeleid',
-    description:
-      'Here you will find everything about our shipping and colletion options.',
+    description: 'Hier vindt u alles over onze verzend- en afhaalopties.',
     href: '/delivery-options',
-  },
-  {
-    icon: CgFileDocument,
-    title: 'About us',
-    description:
-      'Curious about the background of Allprepare? You can read it on this page.',
-    href: '/about-us',
   },
   {
     icon: FaNewspaper,
     title: 'Retourbeleid',
-    description: 'Still not completely satisfied? Read here about returns.',
+    description:
+      'Nog steeds niet helemaal tevreden? Lees hier over retourneren.',
     href: '/returns-policy',
   },
-  {
-    icon: CgFileDocument,
-    title: 'Warranty',
-    description: 'Here you will find our warranty conditions',
-    href: '/warranty',
-  },
+
   {
     icon: CgFileDocument,
     title: 'Algemene Voorwaarden',
-    description: 'Here you will find our general terms and conditions.',
+    description: 'Hier vindt u onze algemene voorwaarden.',
     href: '/terms-policy',
   },
   {
     icon: MdOutlinePrivacyTip,
     title: 'Privacybeleid',
-    description: 'We respect your data. Read more here.',
+    description: 'Wij respecteren uw gegevens. Lees hier meer.',
     href: '/privacy-policy',
-  },
-  {
-    icon: CgFileDocument,
-    title: 'Complaints procedure',
-    description: 'We always try to find a solution together.',
-    href: '/complaints-procedure',
   },
 ]
 
 export const pages = [
   {
-    title: 'Contact Us',
-    description: 'On this page, you will be able to send us an email.',
+    title: 'Contact',
+    description: 'Op deze pagina kunt u ons een e-mail sturen.',
     href: '/contact',
   },
   {
-    title: 'Customer Services',
+    title: 'Klantenservice',
     description:
-      'Access customer service for inquiries, assistance, and support.',
+      'Neem contact op met de klantenservice voor vragen, hulp en ondersteuning.',
     href: '/customer-services',
   },
   {
     title: 'Verzendbeleid',
     description:
-      'Explore the various delivery options available for your orders.',
+      'Ontdek de verschillende bezorgopties die beschikbaar zijn voor uw bestellingen.',
     href: '/delivery-options',
   },
   {
     title: 'Privacybeleid',
     description:
-      'Understand how we handle and protect your personal information.',
+      'Ontdek hoe wij uw persoonlijke gegevens verwerken en beschermen.',
     href: '/privacy-policy',
   },
   {
-    title: 'Products',
-    description: 'Browse our collection of products and find what you need.',
+    title: 'Producten',
+    description: 'Bekijk onze productcollectie en vind wat u nodig hebt.',
     href: '/products',
   },
   {
     title: 'Retourbeleid',
-    description: 'Review our policy for returning items and obtaining refunds.',
+    description:
+      'Bekijk ons ​​beleid voor het retourneren van artikelen en het verkrijgen van restituties.',
     href: '/returns-policy',
   },
   {
     title: 'Algemene Voorwaarden',
-    description: 'Read the terms and conditions that apply to our services.',
+    description:
+      'Lees de algemene voorwaarden die van toepassing zijn op onze diensten.',
     href: '/terms-policy',
   },
 ]

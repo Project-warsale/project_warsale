@@ -10,16 +10,14 @@ const BottomHeader = () => {
         <div className='rounded-full h-[40px] w-[40px] bg-theme/20 flex items-center justify-center'>
           <PiPackage className='text-xl text-theme' />
         </div>
-        <span className='text-[15px] font-semibold'>
-          More than 10,000 customers
-        </span>
+        <span className='text-[15px] font-semibold'>Ruim 10.000 klanten</span>
       </div>
       <div className='flex items-center gap-2 max-lg:hidden'>
         <div className='rounded-full h-[40px] w-[40px] bg-theme/20 flex items-center justify-center'>
           <TbBus className='text-xl text-theme' />
         </div>
         <span className='text-[15px] font-semibold'>
-          Largest stock in the Netherlands
+          Grootste voorraad van Nederland
         </span>
       </div>
       <div className='flex items-center gap-2'>
@@ -27,16 +25,14 @@ const BottomHeader = () => {
           <LuTrophy className='text-xl text-theme' />
         </div>
         <span className='text-[15px] font-semibold'>
-          Customers give us 9/10
+          Klanten geven ons 9/10
         </span>
       </div>
       <div className='flex items-center gap-2 max-xl:hidden'>
         <div className='rounded-full h-[40px] w-[40px] bg-theme/20 flex items-center justify-center'>
           <LuWallet className='text-xl text-theme' />
         </div>
-        <span className='text-[15px] font-semibold'>
-          For you and your family
-        </span>
+        <span className='text-[15px] font-semibold'>Voor jou en je gezin</span>
       </div>
     </div>
   )

@@ -15,7 +15,7 @@ const Search = () => {
           setSearchValue(e.target.value)
         }
         className='w-full h-full bg-transparent outline-none px-6 text-[15px] text-[#6A655E] font-semibold placeholder:text-[#6A655E]'
-        placeholder='What are you looking for?'
+        placeholder='Waar bent u naar op zoek?'
       />
       <label htmlFor='search' className='cursor-pointer'>
         <IoSearch className='text-xl text-[#6A655E]' />

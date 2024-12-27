@@ -14,11 +14,11 @@ export const POST = async (req: Request) => {
         product_data: {
           name: item.product.title,
           images: [item.product.images[0]],
-          description: `(Includes ${formatPrice(
+          description: `(inclusief B.T.W. ${formatPrice(
             (item.product.discountedPrice ?? item.product.price) *
               0.21 *
               item.quantity
-          )} VAT)`,
+          )})`,
         },
         unit_amount: (item.product.discountedPrice ?? item.product.price) * 121,
       },

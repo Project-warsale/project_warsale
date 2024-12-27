@@ -37,7 +37,7 @@ const Header = () => {
           <Link href='/customer-services' className='flex items-center gap-5'>
             <div className='flex items-center gap-3 w-full text-[#0A64B2] font-bold text-[15px] hover:opacity-80 transition duration-300'>
               <span className='whitespace-nowrap max-sm:hidden'>
-                Customer Service
+                Klantenservice
               </span>
               <FaArrowRight className='text-lg max-sm:hidden' />
               <LuHeadset className='text-2xl max-lg:text-xl text-[#0c2e4d]' />

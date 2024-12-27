@@ -62,7 +62,7 @@ const SearchResults = ({
         </div>
       ) : (
         <div className='w-full h-full flex items-center justify-center'>
-          <p className='text-zinc-600'>Couldn&apos;t find anything.</p>
+          <p className='text-zinc-600'>Er kon niets gevonden worden.</p>
         </div>
       )}
     </div>
