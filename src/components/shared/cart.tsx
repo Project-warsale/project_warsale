@@ -21,7 +21,7 @@ const Cart = () => {
   return (
     <div
       className={cn(
-        'w-[450px] fixed right-0 bottom-0 max-md:w-full transition-all duration-500 h-screen shadow-lg bg-white z-[999]',
+        'w-[450px] fixed right-0 bottom-0 max-md:w-full max-sm:pb-3 transition-all duration-500 h-screen shadow-lg bg-white z-[999]',
         cartOpen
           ? 'translate-x-0'
           : 'translate-x-[500px] max-md:translate-x-[700px]'

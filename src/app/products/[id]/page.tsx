@@ -43,7 +43,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   if (!product) return notFound()
 
   return (
-    <div className='min-h-screen px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-6 w-full flex flex-col items-start gap-10'>
+    <div className='min-h-screen max-w-[100vw] overflow-x-hidden px-3 md:px-5 lg:px-24 xl:px-56 2xl:px-80 mt-6 w-full flex flex-col items-start gap-10'>
       <div className='w-full flex items-center gap-3 max-lg:flex-col'>
         <Carousel className='w-full'>
           <CarouselContent className='w-full h-full'>
