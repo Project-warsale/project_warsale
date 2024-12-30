@@ -36,6 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <meta name='apple-mobile-web-app-capable' content='yes' />
+      <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <body className={`${recursive.className} antialiased overflow-x-hidden`}>
         <ContextProvider>
           <Header />

@@ -21,7 +21,7 @@ const Cart = () => {
   return (
     <div
       className={cn(
-        'w-[450px] fixed right-0 top-0 max-md:w-full transition-all duration-500 h-screen shadow-lg bg-white z-[999]',
+        'w-[450px] fixed right-0 bottom-0 max-md:w-full transition-all duration-500 h-screen shadow-lg bg-white z-[999]',
         cartOpen
           ? 'translate-x-0'
           : 'translate-x-[500px] max-md:translate-x-[700px]'
@@ -80,7 +80,7 @@ const Cart = () => {
             })}
           </div>
           <div className='w-full flex flex-col items-start gap-3'>
-            <div className='w-full flex items-center justify-between px-5 border-b py-3'>
+            <div className='w-full flex items-center justify-between max-sm:flex-col max-xl:justify-start px-5 border-b py-3'>
               <h4 className='text-2xl font-semibold'>Subtotaal :</h4>
               <h4>
                 {formatPrice(total + total * 0.21)}
